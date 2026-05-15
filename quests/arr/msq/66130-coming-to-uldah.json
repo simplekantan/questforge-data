@@ -41,7 +41,7 @@
             "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
           },
           "stopDistance": 3.0,
-          "expect": "playerZone() == 182 && playerNear({x:35.56,y:4.0,z:-151.18}, 3)"
+          "expect": "playerZone() == 182 and playerNear({x:35.56,y:4.0,z:-151.18}, 3)"
         },
         {
           "type": "talk",
