@@ -1,0 +1,33 @@
+name: Validate quest data
+
+on:
+  pull_request:
+    paths: ['quests/**', 'fragments/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Validate
+        run: dotnet run --project questforge-tools/qf-validate -- . --format json > results.json
+        continue-on-error: true
+
+      - name: Annotate PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const { results, summary } = JSON.parse(fs.readFileSync('results.json', 'utf8'));
+            for (const err of results) {
+              const fn = err.severity === 'error' ? core.error : core.warning;
+              fn(err.message, { file: err.file, title: `[${err.code}]` });
+            }
+            if (summary.errors > 0) core.setFailed(`${summary.errors} error(s)`);

@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66104,
+  "name": "Close to Home",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": false,
+
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [
+      "NPC IDs and positions have not been verified in-game — placeholder values used throughout.",
+      "Quest structure is approximate; sequence flow needs tracing against live game data."
+    ]
+  },
+
+  "lastVerifiedPatch": "7.5",
+
+  "requirements": {
+    "minLevel": 1,
+    "requiredStartingClass": "Gladiator",
+    "prereqs": []
+  },
+
+  "acceptFrom": {
+    "npcId": 1003449,
+    "zone": 131,
+    "position": { "x": -64.3, "y": 0.0, "z": -101.2 }
+  },
+
+  "contributors": ["@simplekantan"],
+  "notes": "First gladiator class quest in Ul'dah. Enabled=false until NPC IDs and positions are verified in-game.",
+
+  "sequences": [
+    {
+      "sequence": 0,
+      "steps": [
+        {
+          "type": "travel",
+          "id": "travel-to-guild",
+          "destination": {
+            "zone": 131,
+            "position": { "x": -64.3, "y": 0.0, "z": -101.2 }
+          },
+          "routeHint": {
+            "aetheryte": "Ul'dah - Steps of Nald"
+          },
+          "expect": "playerZone() == 131"
+        },
+        {
+          "type": "talk",
+          "id": "talk-to-guild-receptionist",
+          "target": {
+            "npcId": 1003450,
+            "zone": 131,
+            "position": { "x": -64.3, "y": 0.0, "z": -101.2 }
+          },
+          "dialogueChoices": [],
+          "expect": "questSequence(66104) >= 1"
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "steps": [
+        {
+          "type": "turn-in",
+          "id": "turn-in-quest",
+          "target": {
+            "npcId": 1003449,
+            "zone": 131,
+            "position": { "x": -64.3, "y": 0.0, "z": -101.2 }
+          },
+          "dialogueChoices": [],
+          "expect": "isQuestComplete(66104)"
+        }
+      ]
+    }
+  ]
+}
