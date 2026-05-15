@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66130,
+  "name": "Coming to Ul'dah",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+
+  "supportStatus": {
+    "implementation": "complete",
+    "knownIssues": []
+  },
+
+  "lastVerifiedPatch": "7.5",
+
+  "requirements": {
+    "minLevel": 1,
+    "prereqs": []
+  },
+
+  "acceptFrom": {
+    "npcId": 1003987,
+    "zone": 182,
+    "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
+  },
+
+  "contributors": ["@simplekantan"],
+  "notes": "New-player intro quest in the new-character Ul'dah instance (zone 182). NPC IDs and approach positions verified in-game during Phase 0 spike. Quest goes seq 0 → 255 directly with no intermediate objectives.",
+
+  "sequences": [
+    {
+      "sequence": 0,
+      "steps": [
+        {
+          "type": "travel",
+          "id": "travel-to-wymond",
+          "destination": {
+            "zone": 182,
+            "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
+          },
+          "routeHint": {
+            "aetheryte": "Ul'dah - Steps of Nald"
+          },
+          "expect": "playerZone() == 182"
+        },
+        {
+          "type": "talk",
+          "id": "talk-to-wymond",
+          "target": {
+            "npcId": 1003987,
+            "zone": 182,
+            "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
+          },
+          "dialogueChoices": [],
+          "expect": "questSequence(66130) >= 1"
+        },
+        {
+          "type": "travel",
+          "id": "travel-to-second-npc",
+          "destination": {
+            "zone": 182,
+            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
+          },
+          "expect": "playerZone() == 182"
+        },
+        {
+          "type": "talk",
+          "id": "talk-to-second-npc",
+          "target": {
+            "npcId": 1003988,
+            "zone": 182,
+            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
+          },
+          "dialogueChoices": [],
+          "expect": "questSequence(66130) >= 255"
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "steps": [
+        {
+          "type": "turn-in",
+          "id": "turn-in-quest",
+          "target": {
+            "npcId": 1003988,
+            "zone": 182,
+            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
+          },
+          "dialogueChoices": [],
+          "expect": "isQuestComplete(66130)"
+        }
+      ]
+    }
+  ]
+}
