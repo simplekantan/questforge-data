@@ -5,6 +5,7 @@ on:
     paths: ['quests/**', 'fragments/**']
 
 permissions:
+  contents: read
   pull-requests: write
 
 jobs:
