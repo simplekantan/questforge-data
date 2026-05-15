@@ -27,7 +27,7 @@
   },
 
   "contributors": ["@simplekantan"],
-  "notes": "New-player intro quest in the new-character Ul'dah instance (zone 182). NPC IDs and approach positions verified in-game during Phase 0 spike. Quest goes seq 0 → 255 directly with no intermediate objectives.",
+  "notes": "New-player intro quest in the new-character Ul'dah instance (zone 182). NPC IDs and approach positions verified in-game during Phase 0 spike. Quest goes seq 0 -> 255 directly with no intermediate objectives. Phase 6: travel steps require playerNear so the engine navigates within the zone before interacting. AcceptStep/TurnInStep engine extension deferred to Phase 10.",
 
   "sequences": [
     {
@@ -40,10 +40,8 @@
             "zone": 182,
             "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
           },
-          "routeHint": {
-            "aetheryte": "Ul'dah - Steps of Nald"
-          },
-          "expect": "playerZone() == 182"
+          "stopDistance": 3.0,
+          "expect": "playerZone() == 182 && playerNear({x:35.56,y:4.0,z:-151.18}, 3)"
         },
         {
           "type": "talk",
@@ -55,32 +53,33 @@
           },
           "dialogueChoices": [],
           "expect": "questSequence(66130) >= 1"
-        },
-        {
-          "type": "travel",
-          "id": "travel-to-second-npc",
-          "destination": {
-            "zone": 182,
-            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
-          },
-          "expect": "playerZone() == 182"
-        },
-        {
-          "type": "talk",
-          "id": "talk-to-second-npc",
-          "target": {
-            "npcId": 1003988,
-            "zone": 182,
-            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
-          },
-          "dialogueChoices": [],
-          "expect": "questSequence(66130) >= 255"
         }
       ]
     },
     {
       "sequence": 255,
       "steps": [
+        {
+          "type": "travel",
+          "id": "travel-to-momodi",
+          "destination": {
+            "zone": 182,
+            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
+          },
+          "stopDistance": 3.0,
+          "expect": "playerNear({x:21.84,y:7.0,z:-81.13}, 3)"
+        },
+        {
+          "type": "talk",
+          "id": "talk-to-momodi",
+          "target": {
+            "npcId": 1003988,
+            "zone": 182,
+            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
+          },
+          "dialogueChoices": [],
+          "expect": "isQuestComplete(66130)"
+        },
         {
           "type": "turn-in",
           "id": "turn-in-quest",
