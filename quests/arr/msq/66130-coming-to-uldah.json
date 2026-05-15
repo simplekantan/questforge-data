@@ -8,7 +8,9 @@
 
   "supportStatus": {
     "implementation": "complete",
-    "knownIssues": []
+    "knownIssues": [
+      "NPC 1003988 identity not confirmed — name unknown, approach position approximate."
+    ]
   },
 
   "lastVerifiedPatch": "7.5",
