@@ -4,6 +4,9 @@ on:
   pull_request:
     paths: ['quests/**', 'fragments/**']
 
+permissions:
+  pull-requests: write
+
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -20,14 +23,45 @@ jobs:
         run: dotnet run --project questforge-tools/qf-validate -- . --format json > results.json
         continue-on-error: true
 
-      - name: Annotate PR
+      - name: Comment and annotate PR
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
             const { results, summary } = JSON.parse(fs.readFileSync('results.json', 'utf8'));
+
+            // Inline log annotations (visible in Actions run log and Checks tab)
             for (const err of results) {
               const fn = err.severity === 'error' ? core.error : core.warning;
-              fn(err.message, { file: err.file, title: `[${err.code}]` });
+              fn(`[${err.code}] ${err.location}: ${err.message}`, { file: err.file, title: err.code });
             }
+
+            // PR comment with a formatted summary
+            const icon    = summary.errors > 0 ? '❌' : summary.warnings > 0 ? '⚠️' : '✅';
+            const status  = summary.errors > 0 ? 'Validation failed.' : summary.warnings > 0 ? 'Validation passed with warnings.' : 'Validation passed.';
+            const rows    = results.map(e => {
+              const sev = e.severity === 'error' ? '🔴 error' : '🟡 warning';
+              const stepId = e.stepId ? ` (step: \`${e.stepId}\`)` : '';
+              return `| ${sev} | \`${e.code}\` | \`${e.file}\` | \`${e.location}\`${stepId} | ${e.message} |`;
+            });
+
+            const body = rows.length === 0
+              ? `## ${icon} qf-validate — ${status}\n\nNo issues found.`
+              : [
+                  `## ${icon} qf-validate — ${status}`,
+                  '',
+                  `**${summary.errors} error(s), ${summary.warnings} warning(s)**`,
+                  '',
+                  '| Severity | Code | File | Location | Message |',
+                  '|----------|------|------|----------|---------|',
+                  ...rows
+                ].join('\n');
+
+            await github.rest.issues.createComment({
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              issue_number: context.issue.number,
+              body
+            });
+
             if (summary.errors > 0) core.setFailed(`${summary.errors} error(s)`);
