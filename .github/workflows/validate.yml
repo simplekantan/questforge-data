@@ -31,10 +31,12 @@ jobs:
             const fs = require('fs');
             const { results, summary } = JSON.parse(fs.readFileSync('results.json', 'utf8'));
 
-            // Inline log annotations (visible in Actions run log and Checks tab)
+            // Inline annotations — startLine enables inline display in Files Changed
             for (const err of results) {
               const fn = err.severity === 'error' ? core.error : core.warning;
-              fn(`[${err.code}] ${err.location}: ${err.message}`, { file: err.file, title: err.code });
+              const props = { file: err.file, title: err.code };
+              if (err.line) props.startLine = err.line;
+              fn(`[${err.code}] ${err.location}: ${err.message}`, props);
             }
 
             // PR comment with a formatted summary
