@@ -4,11 +4,13 @@
   "name": "Coming to Ul'dah",
   "expansion": "arr",
   "category": "msq",
-  "enabled": true,
+  "enabled": false,
 
   "supportStatus": {
-    "implementation": "complete",
-    "knownIssues": []
+    "implementation": "partial",
+    "knownIssues": [
+      "Phase E CI proof: deliberate predicate errors — all criteria will be fixed before merging."
+    ]
   },
 
   "lastVerifiedPatch": "7.5",
@@ -25,7 +27,7 @@
   },
 
   "contributors": ["@simplekantan"],
-  "notes": "New-player intro quest in the new-character Ul'dah instance (zone 182). NPC IDs and approach positions verified in-game during Phase 0 spike. Quest goes seq 0 → 255 directly with no intermediate objectives.",
+  "notes": "Phase E CI proof branch. Predicate errors are intentional; see PR description.",
 
   "sequences": [
     {
@@ -33,45 +35,49 @@
       "steps": [
         {
           "type": "travel",
-          "id": "travel-to-wymond",
-          "destination": {
-            "zone": 182,
-            "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
-          },
-          "routeHint": {
-            "aetheryte": "Ul'dah - Steps of Nald"
-          },
-          "expect": "playerZone() == 182"
-        },
-        {
-          "type": "talk",
-          "id": "talk-to-wymond",
-          "target": {
-            "npcId": 1003987,
-            "zone": 182,
-            "position": { "x": 35.56, "y": 4.0, "z": -151.18 }
-          },
-          "dialogueChoices": [],
-          "expect": "questSequence(66130) >= 1"
+          "id": "criterion-1-unknown-function",
+          "destination": { "zone": 182, "position": { "x": 35.56, "y": 4.0, "z": -151.18 } },
+          "expect": "questSequnece(66130) >= 1"
         },
         {
           "type": "travel",
-          "id": "travel-to-second-npc",
-          "destination": {
-            "zone": 182,
-            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
-          },
-          "expect": "playerZone() == 182"
+          "id": "criterion-2-arity-mismatch",
+          "destination": { "zone": 182, "position": { "x": 21.84, "y": 7.0, "z": -81.13 } },
+          "expect": "questFlag(66130)"
         },
         {
-          "type": "talk",
-          "id": "talk-to-second-npc",
-          "target": {
-            "npcId": 1003988,
-            "zone": 182,
-            "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
-          },
-          "dialogueChoices": [],
+          "type": "travel",
+          "id": "criterion-3-type-mismatch",
+          "destination": { "zone": 182, "position": { "x": 21.84, "y": 7.0, "z": -81.13 } },
+          "expect": "questSequence(66130) >= \"complete\""
+        },
+        {
+          "type": "branch",
+          "id": "criterion-4-and-5-branch",
+          "branches": [
+            {
+              "when": "default and questFlag(66130, 1)",
+              "steps": [
+                {
+                  "type": "travel",
+                  "id": "branch-step-a",
+                  "destination": { "zone": 182 },
+                  "expect": "questSequence(66130) >= 1"
+                }
+              ]
+            },
+            {
+              "when": "default",
+              "steps": [
+                {
+                  "type": "travel",
+                  "id": "branch-step-b",
+                  "destination": { "zone": 182 },
+                  "expect": "questSequence(66130) >= 1"
+                }
+              ]
+            }
+          ],
           "expect": "questSequence(66130) >= 255"
         }
       ]
@@ -87,7 +93,6 @@
             "zone": 182,
             "position": { "x": 21.84, "y": 7.0, "z": -81.13 }
           },
-          "dialogueChoices": [],
           "expect": "isQuestComplete(66130)"
         }
       ]
