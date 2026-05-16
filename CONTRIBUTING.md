@@ -62,15 +62,25 @@ The slug is the quest name lowercased with spaces replaced by hyphens. Authoring
 
 ## Validation
 
-CI runs `qf-validate` automatically on every PR. If validation fails, the errors will appear in the PR checks with file and location details.
+**Quest files** — CI runs `qf-validate` automatically on every PR that touches `quests/` or `fragments/`. Errors appear inline in the PR checks.
 
-You can run the validator locally before pushing:
+Run locally before pushing (requires `questforge-tools` submodule initialised):
 
 ```bash
-dotnet run --project ../questforge-tools/qf-validate -- .
+dotnet run --project questforge-tools/qf-validate -- .
 ```
 
-(Requires `questforge-tools` checked out next to `questforge-data`.)
+**Fixture files** — validate a fixture against its referenced quest file using `qf-trace`:
+
+```bash
+qf-trace validate-fixture fixtures/engine/simple-linear-acceptance.json --quest-data .
+```
+
+Or build and run directly if `qf-trace` is not on your PATH:
+
+```bash
+dotnet run --project questforge-tools/qf-trace -- validate-fixture fixtures/engine/simple-linear-acceptance.json --quest-data .
+```
 
 ---
 
