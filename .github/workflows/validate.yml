@@ -2,14 +2,18 @@ name: Validate quest data
 
 on:
   pull_request:
-    paths: ['quests/**', 'fragments/**']
+    paths: ['quests/**', 'fragments/**', 'fixtures/**']
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 permissions:
   contents: read
   pull-requests: write
 
 jobs:
-  validate:
+  validate-quests:
+    name: Validate quest files (qf-validate)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,7 +24,7 @@ jobs:
         with:
           dotnet-version: '10.x'
 
-      - name: Validate
+      - name: Validate quest and fragment files
         run: dotnet run --project questforge-tools/qf-validate -- . --format json > results.json
         continue-on-error: true
 
@@ -31,7 +35,6 @@ jobs:
             const fs = require('fs');
             const { results, summary } = JSON.parse(fs.readFileSync('results.json', 'utf8'));
 
-            // Inline annotations — startLine enables inline display in Files Changed
             for (const err of results) {
               const fn = err.severity === 'error' ? core.error : core.warning;
               const props = { file: err.file, title: err.code };
@@ -39,32 +42,55 @@ jobs:
               fn(`[${err.code}] ${err.location}: ${err.message}`, props);
             }
 
-            // PR comment with a formatted summary
-            const icon    = summary.errors > 0 ? '❌' : summary.warnings > 0 ? '⚠️' : '✅';
-            const status  = summary.errors > 0 ? 'Validation failed.' : summary.warnings > 0 ? 'Validation passed with warnings.' : 'Validation passed.';
-            const rows    = results.map(e => {
-              const sev = e.severity === 'error' ? '🔴 error' : '🟡 warning';
+            const icon   = summary.errors > 0 ? '❌' : summary.warnings > 0 ? '⚠️' : '✅';
+            const status = summary.errors > 0 ? 'Validation failed.' : summary.warnings > 0 ? 'Validation passed with warnings.' : 'Validation passed.';
+            const rows   = results.map(e => {
+              const sev    = e.severity === 'error' ? '🔴 error' : '🟡 warning';
               const stepId = e.stepId ? ` (step: \`${e.stepId}\`)` : '';
               return `| ${sev} | \`${e.code}\` | \`${e.file}\` | \`${e.location}\`${stepId} | ${e.message} |`;
             });
 
             const body = rows.length === 0
               ? `## ${icon} qf-validate — ${status}\n\nNo issues found.`
-              : [
-                  `## ${icon} qf-validate — ${status}`,
-                  '',
-                  `**${summary.errors} error(s), ${summary.warnings} warning(s)**`,
-                  '',
-                  '| Severity | Code | File | Location | Message |',
-                  '|----------|------|------|----------|---------|',
-                  ...rows
-                ].join('\n');
+              : [`## ${icon} qf-validate — ${status}`, '',
+                 `**${summary.errors} error(s), ${summary.warnings} warning(s)**`, '',
+                 '| Severity | Code | File | Location | Message |',
+                 '|----------|------|------|----------|---------|',
+                 ...rows].join('\n');
 
             await github.rest.issues.createComment({
-              owner:        context.repo.owner,
-              repo:         context.repo.repo,
-              issue_number: context.issue.number,
-              body
+              owner: context.repo.owner, repo: context.repo.repo,
+              issue_number: context.issue.number, body
             });
 
             if (summary.errors > 0) core.setFailed(`${summary.errors} error(s)`);
+
+  validate-fixtures:
+    name: Validate fixture files (qf-trace)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout questforge-data
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Checkout questforge (qf-trace cross-repo dependency)
+        uses: actions/checkout@v4
+        with:
+          repository: simplekantan/questforge
+          path: questforge
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.x'
+
+      - name: Validate fixture files
+        # Exits non-zero if any fixture has errors; warnings are printed but do not fail.
+        run: |
+          failed=0
+          shopt -s nullglob
+          for fixture in fixtures/engine/*.json; do
+            echo "--- $fixture"
+            dotnet run --project questforge-tools/qf-trace -- validate-fixture "$fixture" --quest-data . || failed=1
+          done
+          exit $failed
