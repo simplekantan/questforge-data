@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "ARR MSQ simple linear: travel to NPC, accept quest, travel to NPC, complete",
+  "initialState": "fresh",
+  "capabilities": [
+    "step:travel",
+    "step:talk",
+    "predicate:playerNear",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "predicate:isQuestComplete"
+  ],
+  "questFile": "quests/arr/msq/66130-coming-to-uldah.json",
+  "expectedTransitions": [
+    { "stepId": "travel-to-wymond",  "actionType": "navigate" },
+    { "stepId": "talk-to-wymond",    "actionType": "interact" },
+    { "stepId": "travel-to-momodi",  "actionType": "navigate" },
+    { "stepId": "talk-to-momodi",    "actionType": "interact" }
+  ],
+  "terminalOutcome": "done"
+}
