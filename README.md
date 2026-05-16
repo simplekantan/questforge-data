@@ -2,7 +2,8 @@
 
 Quest definitions and fragment library for [QuestForge](https://github.com/simplekantan/questforge).
 
-**License:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — attribution required for redistribution.
+[![Validate quest data](https://github.com/simplekantan/questforge-data/actions/workflows/validate.yml/badge.svg)](https://github.com/simplekantan/questforge-data/actions/workflows/validate.yml)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC--BY--4.0-lightgrey.svg)](LICENSE)
 
 ---
 
