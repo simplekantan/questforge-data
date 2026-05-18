@@ -3,12 +3,13 @@
   "description": "ARR MSQ simple linear: travel to NPC, accept quest, travel to NPC, complete",
   "initialState": "fresh",
   "capabilities": [
-    "step:travel",
-    "step:talk",
+    "predicate:isQuestComplete",
     "predicate:playerNear",
     "predicate:playerZone",
     "predicate:questSequence",
-    "predicate:isQuestComplete"
+    "step:talk",
+    "step:travel",
+    "step:turn-in"
   ],
   "questFile": "quests/arr/msq/66130-coming-to-uldah.json",
   "expectedTransitions": [

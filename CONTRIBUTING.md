@@ -94,6 +94,94 @@ dotnet run --project questforge-tools/qf-trace -- validate-fixture fixtures/engi
 
 ---
 
+## Predicate syntax
+
+Predicates appear in `expect` and `skipIf` fields. They are JSON strings written using a small expression language.
+
+**Predicate functions** — all predicates are function calls, even zero-argument ones:
+
+| Predicate | Example | True when |
+|---|---|---|
+| `questSequence(questId) >= N` | `"questSequence(66130) >= 1"` | Quest journal sequence is at least N |
+| `isQuestComplete(questId)` | `"isQuestComplete(66130)"` | Quest is in the completed state |
+| `isQuestAccepted(questId)` | `"isQuestAccepted(66130)"` | Quest is currently active |
+| `questFlag(questId, flag)` | `"questFlag(66130, 1)"` | A specific quest flag bit is set |
+| `playerZone() == zoneId` | `"playerZone() == 182"` | Player is in the given zone |
+| `playerNear(pos, radius)` | `"playerNear({x:35.5,y:4.0,z:-151.2}, 3)"` | Player is within radius of the position |
+| `playerInCombat()` | `"playerInCombat()"` | Player is currently in combat |
+| `playerHasItem(itemId)` | `"playerHasItem(2000386)"` | Player's key-item inventory contains the item |
+| `isAttuned(aetheryteId)` | `"isAttuned(9)"` | Player is attuned to the aetheryte |
+
+**Logical operators** — `and`, `or`, `not` are infix/prefix keywords inside the predicate string:
+
+```
+"questSequence(66130) >= 1 and playerZone() == 182"
+"not playerInCombat()"
+"isQuestComplete(66130) or playerHasItem(2000386)"
+```
+
+**Multi-predicate `expect`** — when you need all or any of a list, use the schema `all`/`any` JSON forms instead of a predicate string:
+
+```json
+"expect": { "all": ["playerNear({x:35.5,y:4.0,z:-151.2}, 3)", "playerZone() == 182"] }
+"expect": { "any": ["isQuestComplete(66130)", "questSequence(66130) >= 5"] }
+```
+
+> **Note:** The predicates listed above are implemented in the current engine runtime. The full schema specification (`docs/SCHEMA.md`) documents additional functions that are planned but not yet evaluated at runtime — using unimplemented functions will cause a runtime error.
+
+---
+
+## Step fields: `expect` and `skipIf`
+
+Most step types support two optional guard fields:
+
+- **`expect`** — a predicate that must be true when the step finishes. If the postcondition check fails, the engine counts a step failure and retries. Use this to declare what "done" looks like for a step (e.g. `"expect": "questSequence(66130) >= 1"` after a `talk` step).
+
+- **`skipIf`** — a predicate evaluated before the step runs. If it evaluates to true the step is skipped entirely and the engine advances. Use this when a step may already be complete on re-entry (e.g. skip an `attune` step with `"skipIf": "isAttuned(9)"`).
+
+Both fields accept the same predicate syntax described above.
+
+---
+
+## Step type reference: `attune` and `hand-over-item`
+
+Two step types added in the Phase 11 engine that are not covered by authoring mode's automatic detection — you may need to add them manually when editing quest files.
+
+### `attune`
+
+Use when the quest requires the player to attune to an aetheryte, aethernet shard, or aetherial node.
+
+```json
+{
+  "type": "attune",
+  "id": "attune-to-ul-dah-aetheryte",
+  "target": { "objectId": 2000401, "position": { "x": -158.0, "y": 16.0, "z": 83.0 }, "zone": 130 },
+  "expect": "isAttuned(70)"
+}
+```
+
+`expect` should use `isAttuned(id)` so the engine can verify the attunement completed before moving on. `skipIf` with `isAttuned(id)` is recommended so repeated runs skip the step if already attuned.
+
+### `hand-over-item`
+
+Use when a quest step requires delivering a specific item to an NPC (distinct from the quest `turn-in` step, which completes the quest). This step is common in delivery-style objectives mid-quest.
+
+```json
+{
+  "type": "hand-over-item",
+  "id": "deliver-parcel-to-momodi",
+  "npcId": 1006004,
+  "position": { "x": -147.3, "y": 16.0, "z": 26.2 },
+  "zone": 130,
+  "itemId": 5368,
+  "expect": "questSequence"
+}
+```
+
+The engine navigates to the NPC, opens dialogue, and selects the item hand-over option. After completion it verifies `expect` — typically `questSequence` advancing to the next journal marker.
+
+---
+
 ## Submitting a PR
 
 - One quest per PR is preferred — it keeps review focused
