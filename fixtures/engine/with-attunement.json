@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "ARR MSQ 'Close to Home' (65644), full multi-zone run: accept, lift to Limsa Upper Decks (129), attune aetheryte 8, hand over item, cross to Lower Decks (128), attune shards 42/48, talk, aethernet back to 129, NPC-lift to 128, turn in. Exercises accept/travel/attune/hand-over-item/talk/turn-in + npcDialogue and aethernet routing, replayed via the generic trace-replay harness.",
+  "initialState": "fresh",
+  "capabilities": [
+    "predicate:isAttuned",
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:not",
+    "predicate:playerHasItem",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "step:accept",
+    "step:attune",
+    "step:hand-over-item",
+    "step:talk",
+    "step:travel",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/65644-close-to-home.json",
+  "expectedTransitions": [
+    {
+      "stepId": "accept-quest",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "accept-quest-65647",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "accept-quest-65647",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-129",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-129",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "attune-aetheryte-8",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "attune-aetheryte-8",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "attune-aetheryte-8",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "hand-over-item-2000104",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "hand-over-item-2000104",
+      "actionType": "handover"
+    },
+    {
+      "stepId": "travel-step",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "attune-aetheryte-42",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "attune-aetheryte-42",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "attune-aetheryte-42",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "attune-aetheryte-48",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "attune-aetheryte-48",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "talk-to-npc-1000926",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1000926",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "aethernet-to-zone-129",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-to-zone-129",
+      "actionType": "useaethernet"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-128",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-128",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-128",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    }
+  ],
+  "terminalOutcome": "done"
+}
