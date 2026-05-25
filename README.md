@@ -44,20 +44,16 @@ fixtures/
 
 Every PR that touches `quests/` or `fragments/` is validated automatically by `qf-validate` via GitHub Actions. The validator runs the full structural rule set defined in the QuestForge schema.
 
-To run validation locally (requires the `questforge-tools` submodule):
+To run validation locally, clone `questforge-tools` as a sibling directory, then run the validator against this repo:
 
 ```bash
-git clone --recurse-submodules https://github.com/simplekantan/questforge-data
+git clone https://github.com/simplekantan/questforge-data
+git clone https://github.com/simplekantan/questforge-tools
 cd questforge-data
-dotnet run --project questforge-tools/qf-validate -- . --format text
+dotnet run --project ../questforge-tools/qf-validate -- . --format text
 ```
 
-If you already cloned without `--recurse-submodules`:
-
-```bash
-git submodule update --init
-dotnet run --project questforge-tools/qf-validate -- . --format text
-```
+CI checks out `questforge-tools` (latest `main`) automatically, so PRs are always validated against the current schema.
 
 ---
 
