@@ -17,8 +17,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Checkout questforge-tools (qf-validate — latest main)
+        uses: actions/checkout@v4
         with:
-          submodules: true
+          repository: simplekantan/questforge-tools
+          path: questforge-tools
 
       - uses: actions/setup-dotnet@v4
         with:
@@ -71,8 +75,12 @@ jobs:
     steps:
       - name: Checkout questforge-data
         uses: actions/checkout@v4
+
+      - name: Checkout questforge-tools (qf-trace — latest main)
+        uses: actions/checkout@v4
         with:
-          submodules: true
+          repository: simplekantan/questforge-tools
+          path: questforge-tools
 
       - name: Checkout questforge (qf-trace cross-repo dependency)
         uses: actions/checkout@v4

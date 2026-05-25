@@ -42,7 +42,7 @@ The easiest path. No JSON editing required.
 Write or edit the JSON directly. Use this approach for corrections, filling in missing fields, or working on quests that are difficult to record.
 
 - See `docs/SCHEMA.md` in the [questforge](https://github.com/simplekantan/questforge) repo for the full format reference
-- Validate your file locally before submitting: `dotnet run --project questforge-tools/qf-validate -- .` (requires [questforge-tools](https://github.com/simplekantan/questforge-tools) checked out as a sibling)
+- Validate your file locally before submitting: `dotnet run --project ../questforge-tools/qf-validate -- .` (requires [questforge-tools](https://github.com/simplekantan/questforge-tools) cloned as a sibling directory)
 
 ---
 
@@ -64,10 +64,10 @@ The slug is the quest name lowercased with spaces replaced by hyphens. Authoring
 
 **Quest files** — CI runs `qf-validate` automatically on every PR that touches `quests/` or `fragments/`. Errors appear inline in the PR checks.
 
-Run locally before pushing (requires `questforge-tools` submodule initialised):
+Run locally before pushing (requires `questforge-tools` cloned as a sibling directory):
 
 ```bash
-dotnet run --project questforge-tools/qf-validate -- .
+dotnet run --project ../questforge-tools/qf-validate -- .
 ```
 
 **Fixture files** — validate a fixture against its referenced quest file using `qf-trace`:
@@ -76,10 +76,10 @@ dotnet run --project questforge-tools/qf-validate -- .
 qf-trace validate-fixture fixtures/engine/simple-linear-acceptance.json --quest-data .
 ```
 
-Or build and run directly if `qf-trace` is not on your PATH:
+Or build and run directly if `qf-trace` is not on your PATH (requires both `questforge-tools` and `questforge` cloned as sibling directories — `qf-trace` references the engine across repos):
 
 ```bash
-dotnet run --project questforge-tools/qf-trace -- validate-fixture fixtures/engine/simple-linear-acceptance.json --quest-data .
+dotnet run --project ../questforge-tools/qf-trace -- validate-fixture fixtures/engine/simple-linear-acceptance.json --quest-data .
 ```
 
 ---
