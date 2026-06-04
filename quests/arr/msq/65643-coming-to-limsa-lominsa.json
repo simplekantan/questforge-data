@@ -104,21 +104,6 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "wait",
-          "seconds": 5,
-          "id": "wait-step",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
           "type": "turn-in",
           "target": {
             "npcId": 1002697,
