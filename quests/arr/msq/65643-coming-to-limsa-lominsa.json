@@ -1,0 +1,148 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65643,
+  "name": "Coming to Limsa Lominsa",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 1,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1001028,
+    "zone": 181,
+    "position": {
+      "x": -39.84137,
+      "y": 19.999994,
+      "z": -4.9592285
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1001028,
+            "zone": 181,
+            "position": {
+              "x": -39.84137,
+              "y": 19.999994,
+              "z": -4.9592285
+            }
+          },
+          "id": "accept-quest",
+          "zone": "181",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(65643)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002732,
+            "zone": 181,
+            "position": {
+              "x": 11.184814,
+              "y": 20.999336,
+              "z": 13.321045
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1002732",
+          "zone": "181",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(65643) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "wait",
+          "seconds": 5,
+          "id": "wait-step",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002697,
+            "zone": 181,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "181",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65643)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
