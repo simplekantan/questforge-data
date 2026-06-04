@@ -20,7 +20,7 @@
   },
   "acceptFrom": {
     "npcId": 1002697,
-    "zone": 0,
+    "zone": 181,
     "position": {
       "x": 20.279175,
       "y": 40.19993,
@@ -40,7 +40,7 @@
           "type": "accept",
           "target": {
             "npcId": 1002697,
-            "zone": 0,
+            "zone": 181,
             "position": {
               "x": 20.279175,
               "y": 40.19993,
@@ -48,7 +48,9 @@
             }
           },
           "id": "accept-quest",
-          "zone": null,
+          "zone": "181",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
           "expect": "isQuestAccepted(65644)",
           "skipIf": null,
           "stopDistance": null,
@@ -67,7 +69,7 @@
           "type": "accept",
           "target": {
             "npcId": 1002698,
-            "zone": 0,
+            "zone": 181,
             "position": {
               "x": 8.499207,
               "y": 39.505493,
@@ -75,7 +77,9 @@
             }
           },
           "id": "accept-quest-65647",
-          "zone": null,
+          "zone": "181",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
           "expect": "isQuestAccepted(65647)",
           "skipIf": null,
           "stopDistance": null,
@@ -89,9 +93,9 @@
           "destination": {
             "zone": 129,
             "position": {
-              "x": 10.84734,
-              "y": 20.999237,
-              "z": 12.37401
+              "x": 11.12934,
+              "y": 20.999392,
+              "z": 13.65501
             },
             "aetheryteId": null
           },
@@ -115,8 +119,11 @@
               ]
             }
           },
+          "useMount": null,
           "id": "npc-dialogue-to-zone-129",
           "zone": "129",
+          "requiredZone": "181",
+          "resumePointFragmentId": null,
           "expect": "playerZone() == 129",
           "skipIf": null,
           "stopDistance": null,
@@ -127,9 +134,7 @@
         },
         {
           "type": "attune",
-          "target": {
-            "value": 8
-          },
+          "target": 8,
           "location": {
             "npcId": 8,
             "zone": 129,
@@ -141,9 +146,143 @@
           },
           "id": "attune-aetheryte-8",
           "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
           "expect": "isAttuned(8)",
           "skipIf": null,
-          "stopDistance": 5.5,
+          "stopDistance": 5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 49,
+          "location": {
+            "npcId": 49,
+            "zone": 129,
+            "position": {
+              "x": -213.61108,
+              "y": 16.739136,
+              "z": 51.80432
+            }
+          },
+          "id": "attune-aetheryte-49",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(49)",
+          "skipIf": null,
+          "stopDistance": 2.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 43,
+          "location": {
+            "npcId": 43,
+            "zone": 129,
+            "position": {
+              "x": -335.1645,
+              "y": 12.619202,
+              "z": 56.381958
+            }
+          },
+          "id": "attune-aetheryte-43",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(43)",
+          "skipIf": null,
+          "stopDistance": 3,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": -335.1645,
+              "y": 12.619202,
+              "z": 56.381958
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "aethernet": {
+              "from": 43,
+              "to": 49
+            }
+          },
+          "useMount": null,
+          "id": "aethernet-intra-zone-49",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "objectExistsInRange(49, 5)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 44,
+          "location": {
+            "npcId": 44,
+            "zone": 129,
+            "position": {
+              "x": -179.40033,
+              "y": 4.8065186,
+              "z": 182.97095
+            }
+          },
+          "id": "attune-aetheryte-44",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(44)",
+          "skipIf": null,
+          "stopDistance": 2,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": -179.40033,
+              "y": 4.8065186,
+              "z": 182.97095
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "aethernet": {
+              "from": 44,
+              "to": 8
+            }
+          },
+          "useMount": null,
+          "id": "aethernet-intra-zone-8",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "objectExistsInRange(8, 30)",
+          "skipIf": null,
+          "stopDistance": null,
           "recover": null,
           "retry": null,
           "preconditions": null,
@@ -165,6 +304,8 @@
           ],
           "id": "hand-over-item-2000104",
           "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
           "expect": "not(playerHasItem(2000104))",
           "skipIf": null,
           "stopDistance": null,
@@ -178,15 +319,18 @@
           "destination": {
             "zone": 129,
             "position": {
-              "x": -84.296,
-              "y": 18.395817,
-              "z": -29.583263
+              "x": -83.97858,
+              "y": 18,
+              "z": -27.142134
             },
             "aetheryteId": null
           },
           "routeHint": null,
+          "useMount": null,
           "id": "travel-step",
           "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
           "expect": "playerZone() == 128",
           "skipIf": null,
           "stopDistance": 1,
@@ -197,9 +341,7 @@
         },
         {
           "type": "attune",
-          "target": {
-            "value": 42
-          },
+          "target": 42,
           "location": {
             "npcId": 42,
             "zone": 128,
@@ -211,9 +353,11 @@
           },
           "id": "attune-aetheryte-42",
           "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
           "expect": "isAttuned(42)",
           "skipIf": null,
-          "stopDistance": 3.5,
+          "stopDistance": 4,
           "recover": null,
           "retry": null,
           "preconditions": null,
@@ -221,9 +365,7 @@
         },
         {
           "type": "attune",
-          "target": {
-            "value": 48
-          },
+          "target": 48,
           "location": {
             "npcId": 48,
             "zone": 128,
@@ -235,9 +377,11 @@
           },
           "id": "attune-aetheryte-48",
           "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
           "expect": "isAttuned(48)",
           "skipIf": null,
-          "stopDistance": 1.5,
+          "stopDistance": 2,
           "recover": null,
           "retry": null,
           "preconditions": null,
@@ -259,6 +403,8 @@
           "dialogueChoices": [],
           "id": "talk-to-npc-1000926",
           "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
           "expect": "questSequence(65644) >= 255",
           "skipIf": null,
           "stopDistance": null,
@@ -274,73 +420,24 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "travel",
-          "destination": {
-            "zone": 129,
-            "position": {
-              "x": -2.6544483,
-              "y": 44,
-              "z": -218.11848
-            },
-            "aetheryteId": null
-          },
-          "routeHint": {
-            "aethernet": {
-              "from": 48,
-              "to": 8
-            }
-          },
-          "id": "aethernet-to-zone-129",
-          "zone": "129",
-          "expect": "playerZone() == 129",
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "travel",
-          "destination": {
+          "type": "attune",
+          "target": 41,
+          "location": {
+            "npcId": 41,
             "zone": 128,
             "position": {
-              "x": 9.190986,
-              "y": 40.000263,
-              "z": 15.176169
-            },
-            "aetheryteId": null
-          },
-          "routeHint": {
-            "npcDialogue": {
-              "target": {
-                "npcId": 1003611,
-                "zone": 129,
-                "position": {
-                  "x": 9.781006,
-                  "y": 20.999247,
-                  "z": 15.0911255
-                }
-              },
-              "dialogueChoices": [
-                {
-                  "type": "list",
-                  "prompt": null,
-                  "answer": "1"
-                },
-                {
-                  "type": "yesno",
-                  "prompt": null,
-                  "answer": "yes"
-                }
-              ]
+              "x": 16.067688,
+              "y": 40.787354,
+              "z": 68.80286
             }
           },
-          "id": "npc-dialogue-to-zone-128",
+          "id": "attune-aetheryte-41",
           "zone": "128",
-          "expect": "playerZone() == 128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(41)",
           "skipIf": null,
-          "stopDistance": null,
+          "stopDistance": 2.5,
           "recover": null,
           "retry": null,
           "preconditions": null,
@@ -361,7 +458,7 @@
           "id": "turn-in-quest",
           "zone": "128",
           "requiredZone": "128",
-          "resumePointFragmentId": "test/limsa-lift-to-upper",
+          "resumePointFragmentId": null,
           "expect": "isQuestComplete(65644)",
           "skipIf": null,
           "stopDistance": null,
