@@ -1,0 +1,176 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "ARR class quest 65847 Way of the Marauder — accept, talk, aethernet travel, combat (3 enemy types), cross-zone travel, turn-in. First fixture with combat step.",
+  "initialState": "fresh",
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "predicate:questVariableHigh",
+    "predicate:questVariableLow",
+    "step:accept",
+    "step:combat",
+    "step:talk",
+    "step:travel",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/class/mar/65847-way-of-the-marauder.json",
+  "expectedTransitions": [
+    {
+      "stepId": "accept-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "accept-quest",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "talk-to-npc-1000927",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1000927",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "aethernet-to-zone-134",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-to-zone-134",
+      "actionType": "useaethernet"
+    },
+    {
+      "stepId": "aethernet-to-zone-134",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-338",
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-49",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-49",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-49",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-49",
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-347",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-347",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-347",
+      "actionType": "engage"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "defeat-347",
+      "actionType": "engage"
+    },
+    {
+      "stepId": "travel-to--55-158",
+      "actionType": "navigate"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "travel-to--55-158",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "travel-to--55-158",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "aethernet-to-zone-128",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "aethernet-to-zone-128",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-to-zone-128",
+      "actionType": "useaethernet"
+    },
+    {
+      "stepId": "aethernet-to-zone-128",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    }
+  ],
+  "terminalOutcome": "done"
+}
