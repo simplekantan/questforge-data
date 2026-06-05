@@ -46,11 +46,11 @@ jobs:
           SIGNING_KEY: ${{ secrets.QUESTFORGE_DATA_SIGNING_KEY }}
         run: |
           echo "$SIGNING_KEY" > /tmp/private.pem
-          # Sign the .sha256 text file directly (not the zip).
-          # Plugin verifies: compute SHA256 of zip, compare to .sha256 contents, verify .sig against .sha256.
-          openssl pkeyutl -sign -inkey /tmp/private.pem -rawin \
-            -in questforge-data.zip.sha256 \
-            -out questforge-data.zip.sig
+          # ECDSA P-256: sign the .sha256 file with SHA-256 digest.
+          # Plugin verifies: compute SHA256 of zip, compare to .sha256 contents,
+          # verify .sig against .sha256 using embedded P-256 public key.
+          openssl dgst -sha256 -sign /tmp/private.pem \
+            -out questforge-data.zip.sig questforge-data.zip.sha256
           rm /tmp/private.pem
           echo "Signature size: $(wc -c < questforge-data.zip.sig) bytes"
 
