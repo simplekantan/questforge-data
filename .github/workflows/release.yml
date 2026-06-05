@@ -1,0 +1,68 @@
+name: Release signed quest data
+
+on:
+  push:
+    branches: [main]
+    paths: ['quests/**', 'fragments/**']
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and sign release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine version
+        id: version
+        run: |
+          # Count tags matching v*.*.* to derive the next patch version
+          latest=$(git tag --list 'v*.*.*' --sort=-v:refname | head -n1)
+          if [ -z "$latest" ]; then
+            next="v1.0.0"
+          else
+            # Increment patch: v1.0.3 -> v1.0.4
+            IFS='.' read -r major minor patch <<< "${latest#v}"
+            next="v${major}.${minor}.$((patch + 1))"
+          fi
+          echo "version=$next" >> "$GITHUB_OUTPUT"
+          echo "Version: $next"
+
+      - name: Package quest data
+        run: |
+          zip -r questforge-data.zip quests/ fragments/ LICENSE
+          sha256sum questforge-data.zip | awk '{print $1}' > questforge-data.zip.sha256
+          echo "SHA256: $(cat questforge-data.zip.sha256)"
+
+      - name: Sign release
+        env:
+          SIGNING_KEY: ${{ secrets.QUESTFORGE_DATA_SIGNING_KEY }}
+        run: |
+          echo "$SIGNING_KEY" > /tmp/private.pem
+          # Sign the .sha256 text file directly (not the zip).
+          # Plugin verifies: compute SHA256 of zip, compare to .sha256 contents, verify .sig against .sha256.
+          openssl pkeyutl -sign -inkey /tmp/private.pem -rawin \
+            -in questforge-data.zip.sha256 \
+            -out questforge-data.zip.sig
+          rm /tmp/private.pem
+          echo "Signature size: $(wc -c < questforge-data.zip.sig) bytes"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          gh release create "$version" \
+            --title "Quest Data $version" \
+            --notes "Automated release from commit $(git rev-parse --short HEAD)." \
+            --latest \
+            questforge-data.zip \
+            questforge-data.zip.sha256 \
+            questforge-data.zip.sig
