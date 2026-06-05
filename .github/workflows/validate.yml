@@ -102,3 +102,7 @@ jobs:
             dotnet run --project questforge-tools/qf-trace -- validate-fixture "$fixture" --quest-data . || failed=1
           done
           exit $failed
+
+      - name: Coverage report
+        if: always()
+        run: dotnet run --project questforge-tools/qf-trace -- coverage --quest-data . --format markdown >> $GITHUB_STEP_SUMMARY
