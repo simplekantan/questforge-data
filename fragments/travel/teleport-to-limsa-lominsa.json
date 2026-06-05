@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/teleport-to-limsa-lominsa",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 8,
+      "id": "teleport-to-limsa",
+      "zone": "129",
+      "expect": "playerZone() == 129"
+    }
+  ]
+}
