@@ -8,7 +8,7 @@
       "aetheryteId": 2,
       "id": "teleport-to-2",
       "zone": "132",
-      "requiredZone": "130",
+      "requiredZone": null,
       "resumePointFragmentId": null,
       "expect": "playerZone() == 132",
       "skipIf": null,
