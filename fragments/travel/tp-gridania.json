@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/tp-gridania",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 2,
+      "id": "teleport-to-2",
+      "zone": "132",
+      "requiredZone": "130",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 132",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
