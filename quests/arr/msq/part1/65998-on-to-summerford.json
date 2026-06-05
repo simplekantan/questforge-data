@@ -30,7 +30,7 @@
   "chain": null,
   "rewardOverride": null,
   "contributors": null,
-  "notes": null,
+  "notes": "First quest with reward selection. 3 optional rewards: boots + Allagan Bronze Piece.",
   "sequences": [
     {
       "sequence": 0,
