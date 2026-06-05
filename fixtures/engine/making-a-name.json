@@ -1,0 +1,89 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "ARR MSQ 65647 Making a Name — NPC dialogue zone travel, pickup-item, 5 interact-object steps, turn-in with auto-fill Request addon. First fixture with pickup-item and interact-object.",
+  "initialState": "fresh",
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:playerHasItem",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "step:accept",
+    "step:interact-object",
+    "step:pickup-item",
+    "step:talk",
+    "step:travel",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/65647-making-a-name.json",
+  "expectedTransitions": [
+    {
+      "stepId": "npc-dialogue-to-zone-129",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "npc-dialogue-to-zone-129",
+      "actionType": "interact"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "pickup-item-2000447",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "pickup-item-2000447",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "interact-object-2001564",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "interact-object-2001564",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "interact-object-2001565",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "interact-object-2001565",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "interact-object-2001566",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "interact-object-2001566",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "interact-object-2001567",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "interact-object-2001567",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "interact-object-2001568",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "interact-object-2001568",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    }
+  ],
+  "terminalOutcome": "done"
+}
