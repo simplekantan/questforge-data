@@ -42,15 +42,10 @@
       "actionType": "useaethernet"
     },
     {
-      "stepId": "aethernet-to-zone-134",
       "actionType": "wait"
     },
     {
       "stepId": "defeat-338",
-      "actionType": "engage"
-    },
-    {
-      "stepId": "defeat-338",
       "actionType": "navigate"
     },
     {
@@ -133,18 +128,6 @@
       "actionType": "navigate"
     },
     {
-      "actionType": "engage"
-    },
-    {
-      "stepId": "travel-to--55-158",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "travel-to--55-158",
-      "actionType": "wait"
-    },
-    {
-      "stepId": "aethernet-to-zone-128",
       "actionType": "wait"
     },
     {
@@ -156,11 +139,6 @@
       "actionType": "useaethernet"
     },
     {
-      "stepId": "aethernet-to-zone-128",
-      "actionType": "wait"
-    },
-    {
-      "stepId": "turn-in-quest",
       "actionType": "wait"
     },
     {
