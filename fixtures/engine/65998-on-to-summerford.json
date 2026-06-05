@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "On to Summerford (65998) — accept, aethernet travel, attune, turn-in with reward selection",
+  "initialState": "fresh",
+  "capabilities": [],
+  "questFile": "quests/arr/msq/65998-on-to-summerford.json",
+  "expectedTransitions": [
+    {
+      "stepId": "accept-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "accept-quest",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "aethernet-to-zone-134",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-to-zone-134",
+      "actionType": "useaethernet"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "attune-aetheryte-52",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "attune-aetheryte-52",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    }
+  ],
+  "terminalOutcome": "done"
+}
