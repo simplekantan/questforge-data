@@ -26,7 +26,7 @@ jobs:
           # Count tags matching v*.*.* to derive the next patch version
           latest=$(git tag --list 'v*.*.*' --sort=-v:refname | head -n1)
           if [ -z "$latest" ]; then
-            next="v1.0.0"
+            next="v0.0.1"
           else
             # Increment patch: v1.0.3 -> v1.0.4
             IFS='.' read -r major minor patch <<< "${latest#v}"
