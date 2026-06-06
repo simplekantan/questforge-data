@@ -28,6 +28,7 @@
 
   "contributors": ["@simplekantan"],
   "notes": "New-player intro quest in the new-character Ul'dah instance (zone 182). NPC IDs and approach positions verified in-game during Phase 0 spike. Quest goes seq 0 -> 255 directly with no intermediate objectives. Phase 6: travel steps require playerNear so the engine navigates within the zone before interacting. AcceptStep/TurnInStep engine extension deferred to Phase 10.",
+  "skipIf": "isQuestComplete(65643) or isQuestComplete(65575)",
 
   "sequences": [
     {
