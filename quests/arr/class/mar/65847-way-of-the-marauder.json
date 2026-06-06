@@ -3,7 +3,7 @@
   "id": 65847,
   "name": "Way of the Marauder",
   "expansion": "arr",
-  "category": "msq",
+  "category": "class",
   "enabled": true,
   "supportStatus": {
     "implementation": "partial",
