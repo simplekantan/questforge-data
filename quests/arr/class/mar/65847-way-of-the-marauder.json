@@ -66,6 +66,20 @@
       "skipIf": null,
       "steps": [
         {
+          "type": "register-gearset",
+          "id": "register-gearset",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
           "type": "talk",
           "target": {
             "npcId": 1000927,
