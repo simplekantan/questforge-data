@@ -30,7 +30,8 @@
   "chain": null,
   "rewardOverride": null,
   "contributors": null,
-  "notes": null,
+  "skipIf": "playerZone() == 181",
+  "notes": "skipIf guards against trying to accept/navigate while in tutorial zone",
   "sequences": [
     {
       "sequence": 0,
