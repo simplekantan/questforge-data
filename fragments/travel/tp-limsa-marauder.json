@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/tp-limsa-marauder",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 8,
+      "id": "teleport-to-8",
+      "zone": "129",
+      "requiredZone": "134",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 129",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 129,
+        "position": {
+          "x": -86.3784,
+          "y": 18.800325,
+          "z": -7.3816786
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "approach-aetheryte",
+      "zone": "129",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "objectExistsInRange(8, 6)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 128,
+        "position": {
+          "x": -84.423515,
+          "y": 18.600264,
+          "z": -13.54586
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "aethernet": {
+          "from": 8,
+          "to": 48
+        }
+      },
+      "useMount": null,
+      "id": "aethernet-to-zone-128",
+      "zone": "128",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 128",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
