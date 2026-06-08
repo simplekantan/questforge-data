@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "65999 Dressed to Call — head slot already equipped. Both purchases skipped.",
+  "initialState": "fresh",
+  "initialOverrides": {
+    "slotsEquipped": [2]
+  },
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:isSlotEquipped",
+    "predicate:playerHasItem",
+    "step:accept",
+    "step:equip-best-gear",
+    "step:purchase-item",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/part1/65999-dressed-to-call.json",
+  "expectedTransitions": [
+    { "stepId": "accept-quest", "actionType": "navigate" },
+    { "stepId": "accept-quest", "actionType": "interact" },
+    { "stepId": "equip-best-gear-guard", "actionType": "equipbestgear" },
+    { "stepId": "equip-best-gear", "actionType": "equipbestgear" },
+    { "stepId": "turn-in-quest", "actionType": "interact" }
+  ],
+  "terminalOutcome": "done"
+}

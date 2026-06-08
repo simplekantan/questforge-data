@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "65999 Dressed to Call — player starts in zone 128 (wrong zone). Resume fragment fires before accept.",
+  "initialState": "fresh",
+  "initialOverrides": {
+    "zone": 128,
+    "positionX": 0.0,
+    "positionY": 45.0,
+    "positionZ": -253.5,
+    "slotsEquipped": [2]
+  },
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:isSlotEquipped",
+    "predicate:playerHasItem",
+    "step:accept",
+    "step:equip-best-gear",
+    "step:purchase-item",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/part1/65999-dressed-to-call.json",
+  "expectedTransitions": [
+    { "stepId": "lim-upper-aethernet--to-zone-134", "actionType": "navigate" },
+    { "stepId": "lim-upper-aethernet--to-zone-134", "actionType": "useaethernet" },
+    { "actionType": "wait" },
+    { "stepId": "accept-quest", "actionType": "navigate" },
+    { "stepId": "accept-quest", "actionType": "interact" },
+    { "stepId": "equip-best-gear-guard", "actionType": "equipbestgear" },
+    { "stepId": "equip-best-gear", "actionType": "equipbestgear" },
+    { "stepId": "turn-in-quest", "actionType": "interact" }
+  ],
+  "terminalOutcome": "done"
+}
