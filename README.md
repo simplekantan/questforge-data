@@ -59,7 +59,7 @@ CI checks out `questforge-tools` (latest `main`) automatically, so PRs are alway
 
 ## Engine capabilities
 
-The QuestForge engine supports 22 step types: `travel`, `talk`, `accept`, `turn-in`, `interact-object`, `pickup-item`, `combat`, `duty`, `cutscene`, `say-chat-message`, `use-emote`, `use-item`, `use-action`, `equip-gear-for-quest`, `equip-best-gear`, `change-job`, `minigame`, `await-user`, `branch`, `fragment`, `attune`, and `hand-over-item`.
+The QuestForge engine supports 28 step types: `travel`, `talk`, `accept`, `turn-in`, `interact-object`, `pickup-item`, `combat`, `duty`, `cutscene`, `say-chat-message`, `use-emote`, `use-item`, `use-action`, `equip-gear-for-quest`, `equip-best-gear`, `change-job`, `register-gearset`, `open-coffers`, `teleport`, `aethernet`, `purchase-item`, `wait`, `minigame`, `await-user`, `branch`, `fragment`, `attune`, and `hand-over-item`.
 
 Quest files in this repo may use any of these step types. See [CONTRIBUTING.md](CONTRIBUTING.md) for authoring guidance and predicate syntax reference.
 
