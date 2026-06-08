@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "65999 Dressed to Call — DoM fresh, no head gear. DoM purchase fires, DoW purchase skipped.",
+  "initialState": "fresh",
+  "initialOverrides": {
+    "job": 6
+  },
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:isSlotEquipped",
+    "predicate:playerHasItem",
+    "step:accept",
+    "step:equip-best-gear",
+    "step:purchase-item",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/part1/65999-dressed-to-call.json",
+  "expectedTransitions": [
+    { "stepId": "accept-quest", "actionType": "navigate" },
+    { "stepId": "accept-quest", "actionType": "interact" },
+    { "stepId": "equip-best-gear-guard", "actionType": "equipbestgear" },
+    { "stepId": "dom-buy-head", "actionType": "navigate" },
+    { "stepId": "dom-buy-head", "actionType": "purchase" },
+    { "stepId": "equip-best-gear", "actionType": "equipbestgear" },
+    { "stepId": "turn-in-quest", "actionType": "navigate" },
+    { "stepId": "turn-in-quest", "actionType": "interact" }
+  ],
+  "terminalOutcome": "done"
+}
