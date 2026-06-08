@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/low-lim-aether-mar",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 128,
+        "position": {
+          "x": -78.23226,
+          "y": 18.800323,
+          "z": -2.7258074
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "aethernet": {
+          "from": 8,
+          "to": 48
+        }
+      },
+      "useMount": null,
+      "id": "aethernet-to-zone-128",
+      "zone": "128",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 128",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

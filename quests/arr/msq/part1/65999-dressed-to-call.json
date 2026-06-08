@@ -1,0 +1,181 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65999,
+  "name": "Dressed to Call",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 4,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002626,
+    "zone": 134,
+    "position": {
+      "x": 207.2633,
+      "y": 112.86037,
+      "z": -222.43079
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002626,
+            "zone": 134,
+            "position": {
+              "x": 207.2633,
+              "y": 112.86037,
+              "z": -222.43079
+            }
+          },
+          "id": "accept-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": "travel/limsa-aethernet-mid-nosc",
+          "expect": "isQuestAccepted(65999)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "equip-best-gear",
+          "id": "equip-best-gear-guard",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "purchase-item",
+          "target": {
+            "npcId": 1003257,
+            "zone": 134,
+            "position": {
+              "x": 201.70898,
+              "y": 98.422874,
+              "z": -206.10364
+            }
+          },
+          "itemId": 2653,
+          "quantity": 1,
+          "currency": "gil",
+          "gcCategory": null,
+          "gcRankTier": null,
+          "vendorCategory": 2,
+          "id": "dow-purchase-head",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2653)",
+          "skipIf": "isSlotEquipped(2) or isDiscipleOfMagic",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "purchase-item",
+          "target": {
+            "npcId": 1003257,
+            "zone": 134,
+            "position": {
+              "x": 201.70898,
+              "y": 98.422874,
+              "z": -206.10364
+            }
+          },
+          "itemId": 2655,
+          "quantity": 1,
+          "currency": "gil",
+          "gcCategory": null,
+          "gcRankTier": null,
+          "vendorCategory": 2,
+          "id": "dom-buy-head",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2655,1)",
+          "skipIf": "isSlotEquipped(2) or isDiscipleOfWar",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "equip-best-gear",
+          "id": "equip-best-gear",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002626,
+            "zone": 134,
+            "position": {
+              "x": 207.2633,
+              "y": 112.86037,
+              "z": -222.43079
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65999)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

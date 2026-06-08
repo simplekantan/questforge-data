@@ -51,7 +51,7 @@
           "id": "accept-quest",
           "zone": null,
           "requiredZone": null,
-          "resumePointFragmentId": null,
+          "resumePointFragmentId": "travel/low-lim-aether-mar",
           "expect": "isQuestAccepted(65847)",
           "skipIf": null,
           "stopDistance": null,

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/limsa-aethernet-mid-nosc",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 134,
+        "position": {
+          "x": 13.338389,
+          "y": 40,
+          "z": 70.11321
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "aethernet": {
+          "from": 41,
+          "to": 45
+        }
+      },
+      "useMount": null,
+      "id": "lim-upper-aethernet--to-zone-134",
+      "zone": "134",
+      "requiredZone": "128",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 134",
+      "skipIf": "playerZone() != 128",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 134,
+        "position": {
+          "x": -76.33318,
+          "y": 18.800325,
+          "z": -1.9414107
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "aethernet": {
+          "from": 8,
+          "to": 45
+        }
+      },
+      "useMount": null,
+      "id": "lim-lower-to-zone-134",
+      "zone": "134",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 134",
+      "skipIf": "playerZone() != 129",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
