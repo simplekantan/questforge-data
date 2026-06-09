@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65938,
+  "name": "Thanks a Million",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "7.51",
+  "requirements": {
+    "minLevel": 10,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1003239,
+    "zone": 134,
+    "position": {
+      "x": -283.68048,
+      "y": 10.593393,
+      "z": -249.34778
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1003239,
+            "zone": 134,
+            "position": {
+              "x": -283.68048,
+              "y": 10.593393,
+              "z": -249.34778
+            }
+          },
+          "id": "accept-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": "travel/tp-limsa-mid-nosc",
+          "expect": "isQuestAccepted(65938)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "pickup-item",
+          "interactableId": 2001255,
+          "position": {
+            "x": -320.57678,
+            "y": 25.833496,
+            "z": -527.5502
+          },
+          "id": "pickup-item-2000342",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000342)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            39
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 134,
+            "position": {
+              "x": -319.0671,
+              "y": 25.583351,
+              "z": -525.5621
+            }
+          },
+          "id": "defeat-39",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "objectExists(39)",
+          "skipIf": "questSequence(65938) >= 255",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 134,
+            "position": {
+              "x": -375.46036,
+              "y": 33.12505,
+              "z": -603.1557
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 138",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 13,
+          "location": {
+            "npcId": 13,
+            "zone": 138,
+            "position": {
+              "x": 651.5449,
+              "y": 11.734131,
+              "z": 513.35913
+            }
+          },
+          "id": "attune-aetheryte-13",
+          "zone": "138",
+          "requiredZone": "138",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(13)",
+          "skipIf": null,
+          "stopDistance": 6,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1003244,
+            "zone": 138,
+            "position": {
+              "x": 650.72095,
+              "y": 7.856781,
+              "z": 527.21436
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "138",
+          "requiredZone": "138",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65938)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
