@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/lim-aethernet-crystal-to-aft",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "aethernet",
+      "from": 8,
+      "to": 41,
+      "fromPosition": {
+        "x": -77.42963,
+        "y": 18.800333,
+        "z": 1.5867969
+      },
+      "id": "aethernet-to-zone-128",
+      "zone": "128",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 128",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

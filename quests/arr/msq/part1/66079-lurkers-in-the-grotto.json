@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "id": 65998,
-  "name": "On to Summerford",
+  "id": 66079,
+  "name": "Lurkers in the Grotto",
   "expansion": "arr",
   "category": "msq",
   "enabled": true,
@@ -12,25 +12,25 @@
   },
   "lastVerifiedPatch": "unknown",
   "requirements": {
-    "minLevel": 4,
+    "minLevel": 5,
     "maxLevel": null,
     "requiredJob": null,
     "requiredStartingClass": null,
     "prereqs": []
   },
   "acceptFrom": {
-    "npcId": 1000972,
-    "zone": 128,
+    "npcId": 1002626,
+    "zone": 134,
     "position": {
-      "x": 20.279175,
-      "y": 40.19993,
-      "z": -6.1189575
+      "x": 207.2633,
+      "y": 112.86037,
+      "z": -222.43079
     }
   },
   "chain": null,
   "rewardOverride": null,
   "contributors": null,
-  "notes": "First quest with reward selection. 3 optional rewards: boots + Allagan Bronze Piece.",
+  "notes": null,
   "sequences": [
     {
       "sequence": 0,
@@ -39,19 +39,83 @@
         {
           "type": "accept",
           "target": {
-            "npcId": 1000972,
-            "zone": 128,
+            "npcId": 1002626,
+            "zone": 134,
             "position": {
-              "x": 20.279175,
-              "y": 40.19993,
-              "z": -6.1189575
+              "x": 207.2633,
+              "y": 112.86037,
+              "z": -222.43079
             }
           },
           "id": "accept-quest",
-          "zone": "128",
-          "requiredZone": "128",
-          "resumePointFragmentId": "travel/lim-aethernet-crystal-to-aft",
-          "expect": "isQuestAccepted(65998)",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66079)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001582,
+          "position": {
+            "x": -58.640503,
+            "y": 27.145752,
+            "z": -141.7716
+          },
+          "id": "interact-object-2001582",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 252",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "duty",
+          "kind": "spd",
+          "contentFinderConditionId": 332,
+          "entryTargetId": 2001582,
+          "id": "duty-step",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66079) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "cutscene",
+          "skip": "ifAllowed",
+          "id": "cutscene",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66079) >= 255",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -65,60 +129,6 @@
       "sequence": 255,
       "skipIf": null,
       "steps": [
-        {
-          "type": "travel",
-          "destination": {
-            "zone": 134,
-            "position": {
-              "x": 14.658728,
-              "y": 40,
-              "z": 70.64014
-            },
-            "aetheryteId": null
-          },
-          "routeHint": {
-            "aethernet": {
-              "from": 41,
-              "to": 45
-            }
-          },
-          "useMount": null,
-          "id": "aethernet-to-zone-134",
-          "zone": "134",
-          "requiredZone": "128",
-          "resumePointFragmentId": null,
-          "expect": "playerZone() == 134",
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "attune",
-          "target": 52,
-          "location": {
-            "npcId": 52,
-            "zone": 134,
-            "position": {
-              "x": 227.98499,
-              "y": 115.526,
-              "z": -257.0382
-            }
-          },
-          "id": "attune-aetheryte-52",
-          "zone": "134",
-          "requiredZone": "134",
-          "resumePointFragmentId": null,
-          "expect": "isAttuned(52)",
-          "skipIf": null,
-          "stopDistance": 7,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
         {
           "type": "turn-in",
           "target": {
@@ -135,7 +145,7 @@
           "zone": "134",
           "requiredZone": "134",
           "resumePointFragmentId": null,
-          "expect": "isQuestComplete(65998)",
+          "expect": "isQuestComplete(66079)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
