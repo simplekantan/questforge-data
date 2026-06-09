@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65933,
+  "name": "Sky-high",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "7.51",
+  "requirements": {
+    "minLevel": 10,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000972,
+    "zone": 128,
+    "position": {
+      "x": 20.279175,
+      "y": 40.19993,
+      "z": -6.1189575
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(65933)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/limsa-aethernet-mid-nosc",
+          "params": null,
+          "id": "fragment-travel-limsa-aethernet-mid-nosc",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1003239,
+            "zone": 134,
+            "position": {
+              "x": -283.68048,
+              "y": 10.593393,
+              "z": -249.34778
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65933)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
