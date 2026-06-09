@@ -4,6 +4,7 @@ Quest definitions and fragment library for [QuestForge](https://github.com/simpl
 
 [![Validate quest data](https://github.com/simplekantan/questforge-data/actions/workflows/validate.yml/badge.svg)](https://github.com/simplekantan/questforge-data/actions/workflows/validate.yml)
 [![Quest Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/simplekantan/questforge-data/main/coverage-badge.json)](COVERAGE.md)
+[![Fixture Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/simplekantan/questforge-data/main/fixture-coverage-badge.json)](COVERAGE.md)
 [![License: CC BY 4.0](https://img.shields.io/badge/license-CC--BY--4.0-lightgrey.svg)](LICENSE)
 
 ### Coverage by expansion
