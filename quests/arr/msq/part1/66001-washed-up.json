@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66001,
+  "name": "Washed Up",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 5,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002626,
+    "zone": 134,
+    "position": {
+      "x": 207.2633,
+      "y": 112.86037,
+      "z": -222.43079
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002626,
+            "zone": 134,
+            "position": {
+              "x": 207.2633,
+              "y": 112.86037,
+              "z": -222.43079
+            }
+          },
+          "id": "accept-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": "travel/limsa-aethernet-mid-nosc",
+          "expect": "isQuestAccepted(66001)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002639,
+            "zone": 134,
+            "position": {
+              "x": 197.16174,
+              "y": 101.098366,
+              "z": -273.57898
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "2049"
+            }
+          ],
+          "id": "talk-step-water",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(66001, 0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002638,
+            "zone": 134,
+            "position": {
+              "x": 169.35986,
+              "y": 93.96625,
+              "z": -191.36346
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "0"
+            }
+          ],
+          "id": "talk-step-2",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(66001, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002637,
+            "zone": 134,
+            "position": {
+              "x": 94.46863,
+              "y": 66.13388,
+              "z": -257.52655
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "608471368"
+            }
+          ],
+          "id": "talk-step-skirmish",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(66001, 0) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002636,
+            "zone": 134,
+            "position": {
+              "x": 17.746216,
+              "y": 60.791252,
+              "z": -269.91687
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "2049"
+            }
+          ],
+          "id": "talk-step-work",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(66001, 0) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002635,
+            "zone": 134,
+            "position": {
+              "x": 33.829224,
+              "y": 54.646034,
+              "z": -150.31665
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002635",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66001) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002626,
+            "zone": 134,
+            "position": {
+              "x": 207.2633,
+              "y": 112.86037,
+              "z": -222.43079
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "134",
+          "requiredZone": "134",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66001)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
