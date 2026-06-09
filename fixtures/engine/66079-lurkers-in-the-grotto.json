@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "66079 Lurkers in the Grotto — accept, interact-object, SPD duty, cutscene, turn-in.",
+  "initialState": "fresh",
+  "capabilities": [
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "step:accept",
+    "step:cutscene",
+    "step:duty",
+    "step:interact-object",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/msq/part1/66079-lurkers-in-the-grotto.json",
+  "expectedTransitions": [
+    { "stepId": "accept-quest", "actionType": "navigate" },
+    { "stepId": "accept-quest", "actionType": "interact" },
+    { "stepId": "interact-object-2001582", "actionType": "navigate" },
+    { "stepId": "interact-object-2001582", "actionType": "interactobject" },
+    { "stepId": "duty-step", "actionType": "entersingleplayerduty" },
+    { "stepId": "cutscene", "actionType": "wait" },
+    { "stepId": "turn-in-quest", "actionType": "navigate" },
+    { "stepId": "turn-in-quest", "actionType": "interact" }
+  ],
+  "terminalOutcome": "done"
+}
