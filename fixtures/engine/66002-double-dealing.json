@@ -35,27 +35,11 @@
       "actionType": "useemote"
     },
     {
-      "stepId": "use-emote-12-on-1002640",
-      "actionType": "wait"
-    },
-    {
-      "stepId": "use-emote-12-on-1002640",
-      "actionType": "useemote"
-    },
-    {
-      "stepId": "use-emote-12-on-1002640",
-      "actionType": "wait"
-    },
-    {
       "stepId": "travel-step",
       "actionType": "navigate"
     },
     {
       "actionType": "engage"
-    },
-    {
-      "stepId": "defeat-52",
-      "actionType": "navigate"
     },
     {
       "stepId": "defeat-52",
