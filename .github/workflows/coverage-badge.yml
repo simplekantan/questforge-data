@@ -6,6 +6,7 @@ on:
     paths:
       - 'quests/**'
       - 'quest-list.json'
+      - 'fixtures/**'
 
 jobs:
   update-coverage:
@@ -29,7 +30,7 @@ jobs:
           repository: simplekantan/questforge
           path: questforge
 
-      - name: Compute coverage
+      - name: Compute quest coverage
         run: |
           dotnet run --project questforge-tools/qf-trace -- quest-coverage \
             --quest-data . \
@@ -37,10 +38,16 @@ jobs:
             --badge coverage-badge.json \
             --badge-dir badges
 
+      - name: Compute fixture coverage
+        run: |
+          dotnet run --project questforge-tools/qf-trace -- coverage \
+            --quest-data . \
+            --badge fixture-coverage-badge.json
+
       - name: Commit coverage files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add COVERAGE.md coverage-badge.json badges/
+          git add COVERAGE.md coverage-badge.json badges/ fixture-coverage-badge.json
           git diff --cached --quiet || git commit -m "ci: update coverage [skip ci]"
           git push
