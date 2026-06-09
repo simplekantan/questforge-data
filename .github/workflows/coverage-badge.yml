@@ -1,0 +1,45 @@
+name: Update coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'quests/**'
+      - 'quest-list.json'
+
+jobs:
+  update-coverage:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - uses: actions/checkout@v4
+        with:
+          repository: simplekantan/questforge-tools
+          path: questforge-tools
+
+      - uses: actions/checkout@v4
+        with:
+          repository: simplekantan/questforge
+          path: questforge
+
+      - name: Compute coverage
+        run: |
+          dotnet run --project questforge-tools/qf-trace -- quest-coverage \
+            --quest-data . \
+            --markdown COVERAGE.md \
+            --badge coverage-badge.json
+
+      - name: Commit coverage files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add COVERAGE.md coverage-badge.json
+          git diff --cached --quiet || git commit -m "ci: update coverage [skip ci]"
+          git push
