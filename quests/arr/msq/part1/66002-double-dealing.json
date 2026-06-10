@@ -7,7 +7,7 @@
   "enabled": true,
   "supportStatus": {
     "implementation": "partial",
-    "knownIssues": [],
+    "knownIssues": ["engage may not work against the goblins that spawn"],
     "minigameSkippable": null
   },
   "lastVerifiedPatch": "unknown",
