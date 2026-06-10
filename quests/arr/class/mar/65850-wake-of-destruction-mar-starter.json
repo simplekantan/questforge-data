@@ -30,7 +30,8 @@
   "chain": null,
   "rewardOverride": null,
   "contributors": null,
-  "notes": null,
+  "notes": "For players that start as Marauder",
+  "skipIf": "isQuestComplete(65851)",
   "sequences": [
     {
       "sequence": 0,

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/tp-swiftperch",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 13,
+      "id": "teleport-to-13",
+      "zone": "138",
+      "requiredZone": "134",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 138",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

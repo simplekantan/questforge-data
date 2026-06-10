@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65951,
+  "name": "Righting the Shipwright",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 10,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002274,
+    "zone": 135,
+    "position": {
+      "x": -34.65332,
+      "y": 8.921356,
+      "z": 861.4479
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002274,
+            "zone": 135,
+            "position": {
+              "x": -34.65332,
+              "y": 8.921356,
+              "z": 861.4479
+            }
+          },
+          "id": "accept-quest",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(65951)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002456,
+            "zone": 135,
+            "position": {
+              "x": -94.86542,
+              "y": 2.3717625,
+              "z": 734.2793
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002456",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(65951) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "pickup-item",
+          "interactableId": 2000769,
+          "position": {
+            "x": -145.09808,
+            "y": 1.0527954,
+            "z": 709.10205
+          },
+          "id": "pickup-item-2000223",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000223)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "pickup-item",
+          "interactableId": 2000770,
+          "position": {
+            "x": -185.68707,
+            "y": -0.13739014,
+            "z": 694.6669
+          },
+          "id": "pickup-item-2000224",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000224)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "pickup-item",
+          "interactableId": 2000771,
+          "position": {
+            "x": -168.84113,
+            "y": 1.9683228,
+            "z": 659.327
+          },
+          "id": "pickup-item-2000222",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000222)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1002456,
+            "zone": 135,
+            "position": {
+              "x": -94.86542,
+              "y": 2.3717625,
+              "z": 734.2793
+            }
+          },
+          "items": [
+            2000222,
+            2000223,
+            2000224
+          ],
+          "id": "hand-over-item-2000222",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "not(playerHasItem(2000222)) and not(playerHasItem(2000223)) and not(playerHasItem(2000224))",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002238,
+            "zone": 135,
+            "position": {
+              "x": 247.36401,
+              "y": 14.02301,
+              "z": 611.9325
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65951)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

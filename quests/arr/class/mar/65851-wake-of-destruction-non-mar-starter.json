@@ -31,6 +31,7 @@
   "rewardOverride": null,
   "contributors": null,
   "notes": "For players who did NOT start as a Marauder",
+  "skipIf": "isQuestComplete(65850)",
   "sequences": [
     {
       "sequence": 0,

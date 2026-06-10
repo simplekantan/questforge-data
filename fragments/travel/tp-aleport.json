@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/tp-aleport",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 14,
+      "id": "teleport-to-14",
+      "zone": "138",
+      "requiredZone": "135",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 138",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
