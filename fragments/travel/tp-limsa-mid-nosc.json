@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "fragmentId": "travel/tp-limsa-marauder",
+  "fragmentId": "travel/tp-limsa-mid-nosc",
   "parameters": [],
   "steps": [
     {
@@ -57,7 +57,7 @@
       "routeHint": {
         "aethernet": {
           "from": 8,
-          "to": 48
+          "to": 45
         }
       },
       "useMount": null,
