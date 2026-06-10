@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/tp-moarby-drydocks",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 10,
+      "id": "teleport-to-10",
+      "zone": "135",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 135",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

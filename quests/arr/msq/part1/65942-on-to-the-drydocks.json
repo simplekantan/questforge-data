@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65942,
+  "name": "On to the Drydocks",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 10,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1001000,
+    "zone": 128,
+    "position": {
+      "x": -32.028687,
+      "y": 41.499985,
+      "z": 208.39233
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1001000,
+            "zone": 128,
+            "position": {
+              "x": -32.028687,
+              "y": 41.499985,
+              "z": 208.39233
+            }
+          },
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(65942)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "aethernet",
+          "from": 41,
+          "to": 46,
+          "fromPosition": {
+            "x": 16.067688,
+            "y": 40.787354,
+            "z": 68.80286
+          },
+          "id": "aethernet-to-zone-135",
+          "zone": "135",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 135",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 10,
+          "location": {
+            "npcId": 10,
+            "zone": 135,
+            "position": {
+              "x": 156.11499,
+              "y": 15.518433,
+              "z": 673.21277
+            }
+          },
+          "id": "attune-aetheryte-10",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(10)",
+          "skipIf": null,
+          "stopDistance": 6,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002238,
+            "zone": 135,
+            "position": {
+              "x": 247.36401,
+              "y": 14.02301,
+              "z": 611.9325
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65942)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
