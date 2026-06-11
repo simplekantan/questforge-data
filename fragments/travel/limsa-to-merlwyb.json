@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/limsa-to-merlwyb",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 129,
+        "position": {
+          "x": 11.38134,
+          "y": 20.999542,
+          "z": 14.09601
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "npcDialogue": {
+          "target": {
+            "npcId": 1003597,
+            "zone": 128,
+            "position": {
+              "x": 8.194031,
+              "y": 39.999973,
+              "z": 17.746216
+            }
+          },
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "1"
+            },
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ]
+        }
+      },
+      "useMount": null,
+      "id": "npc-dialogue-to-zone-129",
+      "zone": "129",
+      "requiredZone": "128",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 129",
+      "skipIf": "playerZone() == 129",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 198,
+        "position": {
+          "x": 0.18769209,
+          "y": 0.9999995,
+          "z": 7.505361
+        },
+        "aetheryteId": null
+      },
+      "routeHint": {
+        "npcDialogue": {
+          "target": {
+            "npcId": 1001029,
+            "zone": 129,
+            "position": {
+              "x": 9.170593,
+              "y": 20.999403,
+              "z": -15.213318
+            }
+          },
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "0"
+            },
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ]
+        }
+      },
+      "useMount": null,
+      "id": "npc-dialogue-to-zone-198",
+      "zone": "198",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 198",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
