@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "fragmentId": "travel/tp-limsa-marauder",
+  "fragmentId": "travel/tp-limsa-aft",
   "parameters": [],
   "steps": [
     {
@@ -8,11 +8,11 @@
       "aetheryteId": 8,
       "id": "teleport-to-8",
       "zone": "129",
-      "requiredZone": "134",
+      "requiredZone": "135",
       "resumePointFragmentId": null,
       "expect": "playerZone() == 129",
       "skipIf": null,
-      "stopDistance": 1,
+      "stopDistance": null,
       "recover": null,
       "retry": null,
       "preconditions": null,
@@ -23,19 +23,19 @@
       "destination": {
         "zone": 129,
         "position": {
-          "x": -86.3784,
-          "y": 18.800325,
-          "z": -7.3816786
+          "x": -82.64786,
+          "y": 18.800333,
+          "z": 7.679125
         },
         "aetheryteId": null
       },
       "routeHint": null,
       "useMount": null,
-      "id": "approach-aetheryte",
+      "id": "travel-step",
       "zone": "129",
       "requiredZone": "129",
       "resumePointFragmentId": null,
-      "expect": "objectExistsInRange(8, 10)",
+      "expect": "playerNear({\"x\": -82.65, \"y\": 18.80, \"z\": 7.68}, 3)",
       "skipIf": null,
       "stopDistance": 1,
       "recover": null,
@@ -44,30 +44,21 @@
       "notes": null
     },
     {
-      "type": "travel",
-      "destination": {
-        "zone": 128,
-        "position": {
-          "x": -84.423515,
-          "y": 18.600264,
-          "z": -13.54586
-        },
-        "aetheryteId": null
+      "type": "aethernet",
+      "from": 8,
+      "to": 41,
+      "fromPosition": {
+        "x": -82.64786,
+        "y": 18.800333,
+        "z": 7.679125
       },
-      "routeHint": {
-        "aethernet": {
-          "from": 8,
-          "to": 48
-        }
-      },
-      "useMount": null,
       "id": "aethernet-to-zone-128",
       "zone": "128",
       "requiredZone": "129",
       "resumePointFragmentId": null,
       "expect": "playerZone() == 128",
       "skipIf": null,
-      "stopDistance": 6,
+      "stopDistance": null,
       "recover": null,
       "retry": null,
       "preconditions": null,

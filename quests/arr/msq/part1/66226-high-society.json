@@ -1,0 +1,257 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66226,
+  "name": "High Society",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 14,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1003282,
+    "zone": 128,
+    "position": {
+      "x": -3.03656,
+      "y": 48.168007,
+      "z": -261.70752
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1003282,
+            "zone": 128,
+            "position": {
+              "x": -3.03656,
+              "y": 48.168007,
+              "z": -261.70752
+            }
+          },
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66226)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000972",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66226) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": 11.2173395,
+              "y": 20.999369,
+              "z": 13.44501
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003597,
+                "zone": 128,
+                "position": {
+                  "x": 8.194031,
+                  "y": 39.999973,
+                  "z": 17.746216
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-129",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1003355,
+            "zone": 129,
+            "position": {
+              "x": -60.868286,
+              "y": 18.000334,
+              "z": 7.4921875
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66226) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 128,
+            "position": {
+              "x": 8.763986,
+              "y": 40.0003,
+              "z": 15.04217
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003611,
+                "zone": 129,
+                "position": {
+                  "x": 9.781006,
+                  "y": 20.999247,
+                  "z": 15.0911255
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-128",
+          "zone": "128",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 128",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66226)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

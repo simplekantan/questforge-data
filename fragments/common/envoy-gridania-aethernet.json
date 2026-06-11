@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "common/envoy-gridania-aethernet",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "attune",
+      "target": 2,
+      "location": {
+        "npcId": 2,
+        "zone": 132,
+        "position": {
+          "x": 32.913696,
+          "y": 2.670288,
+          "z": 30.014404
+        }
+      },
+      "id": "attune-aetheryte-2",
+      "zone": "132",
+      "requiredZone": "132",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(2)",
+      "skipIf": null,
+      "stopDistance": 5.5,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 25,
+      "location": {
+        "npcId": 25,
+        "zone": 132,
+        "position": {
+          "x": 166.58276,
+          "y": -1.7243042,
+          "z": 86.13721
+        }
+      },
+      "id": "attune-aetheryte-25",
+      "zone": "132",
+      "requiredZone": "132",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(25)",
+      "skipIf": null,
+      "stopDistance": 2,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "aethernet",
+      "from": 25,
+      "to": 2,
+      "fromPosition": {
+        "x": 165.25853,
+        "y": -2.4736104,
+        "z": 85.183205
+      },
+      "id": "aethernet-intra-zone-2",
+      "zone": "132",
+      "requiredZone": "132",
+      "resumePointFragmentId": null,
+      "expect": "objectExistsInRange(2, 15)",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 132,
+        "position": {
+          "x": 11.43988,
+          "y": 1.2770443,
+          "z": -15.724209
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "to-old-gridania",
+      "zone": "132",
+      "requiredZone": "132",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 133",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 26,
+      "location": {
+        "npcId": 26,
+        "zone": 133,
+        "position": {
+          "x": 101.27405,
+          "y": 9.018005,
+          "z": -111.31464
+        }
+      },
+      "id": "attune-aetheryte-26",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(26)",
+      "skipIf": null,
+      "stopDistance": 3,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 27,
+      "location": {
+        "npcId": 27,
+        "zone": 133,
+        "position": {
+          "x": 121.23291,
+          "y": 12.649658,
+          "z": -229.63306
+        }
+      },
+      "id": "attune-aetheryte-27",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(27)",
+      "skipIf": null,
+      "stopDistance": 2,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 30,
+      "location": {
+        "npcId": 30,
+        "zone": 133,
+        "position": {
+          "x": -73.92999,
+          "y": 7.9804688,
+          "z": -140.15417
+        }
+      },
+      "id": "attune-aetheryte-30",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(30)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 29,
+      "location": {
+        "npcId": 29,
+        "zone": 133,
+        "position": {
+          "x": -311.0857,
+          "y": 7.94989,
+          "z": -177.05048
+        }
+      },
+      "id": "attune-aetheryte-29",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(29)",
+      "skipIf": null,
+      "stopDistance": 4,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "aethernet",
+      "from": 29,
+      "to": 30,
+      "fromPosition": {
+        "x": -307.269,
+        "y": 7.0605545,
+        "z": -175.0194
+      },
+      "id": "aethernet-intra-zone-30",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "objectExistsInRange(30, 7)",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "attune",
+      "target": 28,
+      "location": {
+        "npcId": 28,
+        "zone": 133,
+        "position": {
+          "x": -145.15906,
+          "y": 4.9591064,
+          "z": -11.7647705
+        }
+      },
+      "id": "attune-aetheryte-28",
+      "zone": "133",
+      "requiredZone": "133",
+      "resumePointFragmentId": null,
+      "expect": "isAttuned(28)",
+      "skipIf": null,
+      "stopDistance": 3.5,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

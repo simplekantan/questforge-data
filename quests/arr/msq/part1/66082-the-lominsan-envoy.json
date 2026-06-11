@@ -1,0 +1,676 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66082,
+  "name": "The Lominsan Envoy",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 14,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002694,
+    "zone": 198,
+    "position": {
+      "x": -0.045776367,
+      "y": 1.6001425,
+      "z": -7.0039062
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "equip-best-gear",
+          "id": "equip-best-gear",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002694,
+            "zone": 198,
+            "position": {
+              "x": -0.045776367,
+              "y": 1.6001425,
+              "z": -7.0039062
+            }
+          },
+          "id": "accept-quest",
+          "zone": "198",
+          "requiredZone": "198",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66082)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001835,
+          "position": {
+            "x": 0.0235393,
+            "y": 2.330988,
+            "z": 9.8216
+          },
+          "id": "interact-object-2001835",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 128,
+            "position": {
+              "x": 8.884986,
+              "y": 40.00034,
+              "z": 16.13817
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003611,
+                "zone": 129,
+                "position": {
+                  "x": 9.781006,
+                  "y": 20.999247,
+                  "z": 15.0911255
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-128",
+          "zone": "128",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 128",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "0"
+            }
+          ],
+          "id": "talk-to-npc-1000972",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66082) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": 10.36134,
+              "y": 20.999222,
+              "z": 12.81701
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003597,
+                "zone": 128,
+                "position": {
+                  "x": 8.194031,
+                  "y": 39.999973,
+                  "z": 17.746216
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-airship-1",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 128,
+            "position": {
+              "x": -10.87461,
+              "y": 91.499664,
+              "z": -16.66672
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003611,
+                "zone": 129,
+                "position": {
+                  "x": 9.781006,
+                  "y": 20.999247,
+                  "z": 15.0911255
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "0"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-airship-2",
+          "zone": "128",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 128",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002695,
+            "zone": 128,
+            "position": {
+              "x": -25.92511,
+              "y": 91.999954,
+              "z": -3.6774292
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1002695",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66082) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001668,
+          "position": {
+            "x": -11.12384,
+            "y": 92.0271,
+            "z": 17.166382
+          },
+          "id": "interact-object-2001668",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000109,
+            "zone": 132,
+            "position": {
+              "x": 29.770264,
+              "y": -19.000002,
+              "z": 114.12219
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "gridania-airship-gate",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerNear({\"x\": 35.01, \"y\": -19.00, \"z\": 105.00}, 3)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002830,
+            "zone": 132,
+            "position": {
+              "x": 36.63684,
+              "y": -18.800003,
+              "z": 89.64673
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002830",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66082) >= 5",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 5,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "common/envoy-gridania-aethernet",
+          "params": null,
+          "id": "fragment-envoy-gridania-aethernet",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1000460,
+            "zone": 133,
+            "position": {
+              "x": -159.41101,
+              "y": 4.054107,
+              "z": -4.1047363
+            }
+          },
+          "items": [
+            2000458
+          ],
+          "id": "hand-over-item-2000458",
+          "zone": "133",
+          "requiredZone": "133",
+          "resumePointFragmentId": null,
+          "expect": "not(playerHasItem(2000458))",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 6,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "aethernet",
+          "from": 28,
+          "to": 93,
+          "fromPosition": {
+            "x": -145.1389,
+            "y": 4.968137,
+            "z": -11.74494
+          },
+          "id": "aethernet-to-zone-132",
+          "zone": "132",
+          "requiredZone": "133",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000106,
+            "zone": 132,
+            "position": {
+              "x": 29.007324,
+              "y": -19.000002,
+              "z": 105.485596
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1000106",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66082) >= 7",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001671,
+          "position": {
+            "x": 7.156433,
+            "y": -21.957764,
+            "z": 123.73535
+          },
+          "id": "interact-object-2001671",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 130",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 8,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004434,
+            "zone": 130,
+            "position": {
+              "x": -27.17633,
+              "y": 83.19999,
+              "z": 2.304016
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-step",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerNear({\"x\": -17.15, \"y\": 83.00, \"z\": 3.92}, 3)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004336,
+            "zone": 130,
+            "position": {
+              "x": -12.619263,
+              "y": 82.99987,
+              "z": 4.562378
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1004336",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66082) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "common/envoy-uldah-aethernet",
+          "params": null,
+          "id": "fragment-envoy-uldah-aethernet",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 36,
+          "to": 51,
+          "fromPosition": {
+            "x": 33.49353,
+            "y": 13.229492,
+            "z": 113.206665
+          },
+          "id": "aethernet-intra-zone-51",
+          "zone": "131",
+          "requiredZone": "131",
+          "resumePointFragmentId": null,
+          "expect": "objectExistsInRange(51, 5)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1001821,
+            "zone": 131,
+            "position": {
+              "x": -24.124573,
+              "y": 38.000004,
+              "z": 85.31323
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "131",
+          "requiredZone": "131",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66082)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

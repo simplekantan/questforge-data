@@ -1,0 +1,111 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66225,
+  "name": "Men of the Blue Tattoos",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 14,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002237,
+    "zone": 135,
+    "position": {
+      "x": 167.55933,
+      "y": 14.095915,
+      "z": 683.92444
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002237,
+            "zone": 135,
+            "position": {
+              "x": 167.55933,
+              "y": 14.095915,
+              "z": 683.92444
+            }
+          },
+          "id": "accept-quest",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": "travel/tp-moarby-drydocks",
+          "expect": "isQuestAccepted(66225)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/tp-limsa-aft",
+          "params": null,
+          "id": "fragment-travel-tp-limsa-aft",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66225)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

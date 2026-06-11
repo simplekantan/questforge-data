@@ -1,0 +1,312 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66081,
+  "name": "A Mizzenmast Repast",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 14,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000972,
+    "zone": 128,
+    "position": {
+      "x": 20.279175,
+      "y": 40.19993,
+      "z": -6.1189575
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000972,
+            "zone": 128,
+            "position": {
+              "x": 20.279175,
+              "y": 40.19993,
+              "z": -6.1189575
+            }
+          },
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66081)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": 11.72034,
+              "y": 20.999485,
+              "z": 13.45401
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003597,
+                "zone": 128,
+                "position": {
+                  "x": 8.194031,
+                  "y": 39.999973,
+                  "z": 17.746216
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-129",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "equip-gear-for-quest",
+          "itemIds": [
+            3760
+          ],
+          "id": "equip-gear-3760",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "playerHasEquipped(3760)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1001029,
+            "zone": 177,
+            "position": {
+              "x": 9.170593,
+              "y": 20.999403,
+              "z": -15.213318
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "32759"
+            }
+          ],
+          "id": "talk-to-npc-1001029",
+          "zone": "177",
+          "requiredZone": "177",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66081) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001010,
+          "position": {
+            "x": -0.015319824,
+            "y": 1.449585,
+            "z": 7.522644
+          },
+          "id": "interact-object-2001010",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 128",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 129,
+            "position": {
+              "x": 10.83234,
+              "y": 20.999435,
+              "z": 14.170011
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1003597,
+                "zone": 128,
+                "position": {
+                  "x": 8.194031,
+                  "y": 39.999973,
+                  "z": 17.746216
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "back-to-merlwyb",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 198,
+            "position": {
+              "x": -0.7563079,
+              "y": 0.9999995,
+              "z": 7.537361
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1001029,
+                "zone": 129,
+                "position": {
+                  "x": 9.170593,
+                  "y": 20.999403,
+                  "z": -15.213318
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-198",
+          "zone": "198",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 198",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002694,
+            "zone": 198,
+            "position": {
+              "x": -0.045776367,
+              "y": 1.6001425,
+              "z": -7.0039062
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "198",
+          "requiredZone": "198",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66081)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
