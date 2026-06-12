@@ -1,6 +1,6 @@
-{
+﻿{
   "schemaVersion": "1.0.0",
-  "description": "65999 Dressed to Call — DoM fresh, no head gear. DoM purchase fires, DoW purchase skipped.",
+  "description": "65999 Dressed to Call â€” DoM fresh, no head gear. DoM purchase fires, DoW purchase skipped.",
   "initialState": "fresh",
   "initialOverrides": {
     "job": 6
@@ -15,7 +15,7 @@
     "step:purchase-item",
     "step:turn-in"
   ],
-  "questFile": "quests/arr/msq/part1/65999-dressed-to-call.json",
+  "questFile": "quests/arr/msq/part1/limsa/65999-dressed-to-call.json",
   "expectedTransitions": [
     { "stepId": "accept-quest", "actionType": "navigate" },
     { "stepId": "accept-quest", "actionType": "interact" },

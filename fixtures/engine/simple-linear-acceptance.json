@@ -1,4 +1,4 @@
-{
+﻿{
   "schemaVersion": "1.0.0",
   "description": "ARR MSQ simple linear: travel to NPC, accept quest, travel to NPC, complete",
   "initialState": "fresh",
@@ -11,7 +11,7 @@
     "step:travel",
     "step:turn-in"
   ],
-  "questFile": "quests/arr/msq/part1/66130-coming-to-uldah.json",
+  "questFile": "quests/arr/msq/part1/uldah/66130-coming-to-uldah.json",
   "expectedTransitions": [
     { "stepId": "travel-to-wymond",  "actionType": "navigate" },
     { "stepId": "talk-to-wymond",    "actionType": "interact" },
