@@ -18,7 +18,7 @@
     "step:travel",
     "step:turn-in"
   ],
-  "questFile": "quests/arr/msq/part1/limsa/65644-close-to-home.json",
+  "questFile": "quests/arr/msq/part1/limsa/65644-close-to-home-marauder.json",
   "expectedTransitions": [
     {
       "stepId": "accept-quest",
