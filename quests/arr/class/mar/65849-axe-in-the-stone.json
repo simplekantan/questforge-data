@@ -582,39 +582,20 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "travel",
-          "destination": {
-            "zone": 135,
-            "position": {
-              "x": 156.11302,
-              "y": 33.997475,
-              "z": 90.2504
-            },
-            "aetheryteId": null
-          },
-          "routeHint": null,
-          "useMount": null,
-          "id": "run-to-duty",
-          "zone": "135",
-          "requiredZone": "135",
-          "resumePointFragmentId": null,
-          "expect": "playerNear({\"x\": 156.11, \"y\": 34.00, \"z\": 90.25}, 1) ",
-          "skipIf": null,
-          "stopDistance": 1,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "duty",
-          "kind": "spd",
+          "type": "single-player-duty",
           "contentFinderConditionId": 328,
+          "entryKind": "proximity",
+          "entryTargetId": null,
+          "entryPosition": {
+            "x": 156.11302,
+            "y": 33.997475,
+            "z": 90.2504
+          },
           "id": "spd",
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
-          "expect": "playerZone() == 262",
+          "expect": "questSequence(65849) >= 255",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
