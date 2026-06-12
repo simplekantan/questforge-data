@@ -1,6 +1,6 @@
-{
+﻿{
   "schemaVersion": "1.0.0",
-  "description": "65999 Dressed to Call — player starts in zone 128 (wrong zone). Resume fragment fires before accept.",
+  "description": "65999 Dressed to Call â€” player starts in zone 128 (wrong zone). Resume fragment fires before accept.",
   "initialState": "fresh",
   "initialOverrides": {
     "zone": 128,
@@ -19,7 +19,7 @@
     "step:purchase-item",
     "step:turn-in"
   ],
-  "questFile": "quests/arr/msq/part1/65999-dressed-to-call.json",
+  "questFile": "quests/arr/msq/part1/limsa/65999-dressed-to-call.json",
   "expectedTransitions": [
     { "stepId": "lim-upper-aethernet--to-zone-134", "actionType": "navigate" },
     { "stepId": "lim-upper-aethernet--to-zone-134", "actionType": "useaethernet" },

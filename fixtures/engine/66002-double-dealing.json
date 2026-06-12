@@ -1,6 +1,6 @@
-{
+﻿{
   "schemaVersion": "1.0.0",
-  "description": "66002 Double Dealing — full run: emote, combat, multi-NPC talk, pickup-item, hand-over-item, turn-in",
+  "description": "66002 Double Dealing â€” full run: emote, combat, multi-NPC talk, pickup-item, hand-over-item, turn-in",
   "initialState": "fresh",
   "capabilities": [
     "predicate:isQuestAccepted",
@@ -20,7 +20,7 @@
     "step:turn-in",
     "step:use-emote"
   ],
-  "questFile": "quests/arr/msq/part1/66002-double-dealing.json",
+  "questFile": "quests/arr/msq/part1/limsa/66002-double-dealing.json",
   "expectedTransitions": [
     {
       "stepId": "accept-quest",
