@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/thanalan/tp-uldah",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 9,
+      "id": "teleport-to-9",
+      "zone": "130",
+      "requiredZone": "132",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 130",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

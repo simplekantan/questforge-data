@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66196,
+  "name": "Into a Copper Hell",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 17,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1001353,
+    "zone": 130,
+    "position": {
+      "x": 21.072632,
+      "y": 7.45,
+      "z": -78.78235
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1001353,
+            "zone": 130,
+            "position": {
+              "x": 21.072632,
+              "y": 7.45,
+              "z": -78.78235
+            }
+          },
+          "id": "accept-quest",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66196)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004621,
+            "zone": 130,
+            "position": {
+              "x": 23.11737,
+              "y": 6.9999914,
+              "z": -86.533936
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1004621",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66196) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 17,
+          "id": "teleport-to-17",
+          "zone": "140",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 140",
+          "skipIf": "not isAttuned(17)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 33,
+          "to": 38,
+          "fromPosition": {
+            "x": 64.19725,
+            "y": 4.1000004,
+            "z": -116.97346
+          },
+          "id": "aethernet-to-zone-140",
+          "zone": "140",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 140",
+          "skipIf": "isAttuned(17)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 17,
+          "location": {
+            "npcId": 17,
+            "zone": 140,
+            "position": {
+              "x": 68.0094,
+              "y": 48.203125,
+              "z": -227.039
+            }
+          },
+          "id": "attune-aetheryte-17",
+          "zone": "140",
+          "requiredZone": "140",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(17)",
+          "skipIf": "isAttuned(17)",
+          "stopDistance": 5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002285,
+            "zone": 140,
+            "position": {
+              "x": 326.46667,
+              "y": 63,
+              "z": -231.64728
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002285",
+          "zone": "140",
+          "requiredZone": "140",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66196) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "dungeon-trial",
+          "contentFinderConditionId": 3,
+          "id": "dungeon-trial",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66196) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/thanalan/tp-uldah",
+          "params": null,
+          "id": "fragment-travel-uldah-tp-uldah",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 338,
+          "entryKind": "talk",
+          "entryTargetId": 1004621,
+          "entryPosition": {
+            "x": 23.11737,
+            "y": 6.9999914,
+            "z": -86.533936
+          },
+          "id": "spd-338",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66196) >= 5",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "equip-best-gear",
+          "id": "equip-best-gear",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1001353,
+            "zone": 130,
+            "position": {
+              "x": 21.072632,
+              "y": 7.45,
+              "z": -78.78235
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66196)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "schemaVersion": "1.0.0",
+  "description": "ARR class quest (MAR): accept, aethernet, talks, pickup items, SPD with hand-over entry, fragments, turn-in",
+  "initialState": "fresh",
+  "capabilities": [
+    "engine:fragments",
+    "predicate:isQuestAccepted",
+    "predicate:isQuestComplete",
+    "predicate:objectExistsInRange",
+    "predicate:playerHasItem",
+    "predicate:playerZone",
+    "predicate:questSequence",
+    "step:accept",
+    "step:aethernet",
+    "step:fragment",
+    "step:pickup-item",
+    "step:single-player-duty",
+    "step:talk",
+    "step:turn-in"
+  ],
+  "questFile": "quests/arr/class/mar/65853-the-mountain-that-strides.json",
+  "expectedTransitions": [
+    {
+      "stepId": "accept-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "accept-quest",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "aethernet-intra-zone-42",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-intra-zone-42",
+      "actionType": "useaethernet"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "talk-to-npc-1002682",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1002682",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "aethernet-to-zone-135",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "aethernet-to-zone-135",
+      "actionType": "useaethernet"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "talk-to-npc-1002112",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1002112",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "talk-to-npc-1002683-again",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "fragment-travel-tp-aleport:teleport-to-14",
+      "actionType": "teleport"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "talk-to-npc-1002113",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1002113",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "pickup-item-2000525",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "pickup-item-2000525",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "pickup-item-2000526",
+      "actionType": "navigate"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "pickup-item-2000526",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "pickup-item-2000526",
+      "actionType": "interactobject"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "navigate"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "navigate"
+    },
+    {
+      "actionType": "engage"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "entersingleplayerduty"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "wait"
+    },
+    {
+      "stepId": "spd-329",
+      "actionType": "entersingleplayerduty"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "fragment-travel-tp-moarby-drydocks:teleport-to-10",
+      "actionType": "teleport"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "talk-to-npc-1002112-again",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "talk-to-npc-1002112-again",
+      "actionType": "interact"
+    },
+    {
+      "stepId": "fragment-travel-tp-limsa-marauder:teleport-to-8",
+      "actionType": "teleport"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "fragment-travel-tp-limsa-marauder:approach-aetheryte",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "fragment-travel-tp-limsa-marauder:aethernet-to-zone-128",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "fragment-travel-tp-limsa-marauder:aethernet-to-zone-128",
+      "actionType": "useaethernet"
+    },
+    {
+      "actionType": "wait"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "navigate"
+    },
+    {
+      "stepId": "turn-in-quest",
+      "actionType": "interact"
+    }
+  ],
+  "terminalOutcome": "done",
+  "initialOverrides": {
+    "zone": 128,
+    "positionX": 17.702993,
+    "positionY": 40.21601,
+    "positionZ": -4.722239,
+    "questSequence": 0
+  }
+}

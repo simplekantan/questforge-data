@@ -38,6 +38,22 @@
       "skipIf": null,
       "steps": [
         {
+          "type": "fragment",
+          "ref": "common/setup-marauder",
+          "params": null,
+          "id": "fragment-common-setup-marauder",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
           "type": "accept",
           "target": {
             "npcId": 1000926,
