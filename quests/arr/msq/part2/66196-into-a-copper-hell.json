@@ -212,7 +212,7 @@
       "steps": [
         {
           "type": "fragment",
-          "ref": "travel/uldah/tp-uldah",
+          "ref": "travel/thanalan/tp-uldah",
           "params": null,
           "id": "fragment-travel-uldah-tp-uldah",
           "zone": null,
