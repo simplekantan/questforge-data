@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "id": 65852,
-  "name": "Brutal Strength",
+  "id": 65853,
+  "name": "The Mountain That Strides",
   "expansion": "arr",
   "category": "class",
   "enabled": true,
@@ -12,7 +12,7 @@
   },
   "lastVerifiedPatch": "7.51",
   "requirements": {
-    "minLevel": 15,
+    "minLevel": 20,
     "maxLevel": null,
     "requiredJob": null,
     "requiredStartingClass": null,
@@ -67,7 +67,7 @@
           "zone": "128",
           "requiredZone": "128",
           "resumePointFragmentId": "travel/tp-limsa-marauder",
-          "expect": "isQuestAccepted(65852)",
+          "expect": "isQuestAccepted(65853)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -82,56 +82,21 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "fragment",
-          "ref": "travel/tp-swiftperch",
-          "params": null,
-          "id": "fragment-travel-tp-swiftperch",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": "isAttuned(14)",
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "fragment",
-          "ref": "travel/tp-aleport",
-          "params": null,
-          "id": "fragment-travel-tp-aleport",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": "not isAttuned(14)",
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "attune",
-          "target": 14,
-          "location": {
-            "npcId": 14,
-            "zone": 138,
-            "position": {
-              "x": 260.94446,
-              "y": -19.60791,
-              "z": 218.52441
-            }
+          "type": "aethernet",
+          "from": 48,
+          "to": 42,
+          "fromPosition": {
+            "x": -3.204026,
+            "y": 43.999996,
+            "z": -218.47823
           },
-          "id": "attune-aetheryte-14",
-          "zone": "138",
-          "requiredZone": "138",
+          "id": "aethernet-intra-zone-42",
+          "zone": "128",
+          "requiredZone": "128",
           "resumePointFragmentId": null,
-          "expect": "isAttuned(14)",
-          "skipIf": "isAttuned(14)",
-          "stopDistance": 5,
+          "expect": "objectExistsInRange(42, 5)",
+          "skipIf": null,
+          "stopDistance": null,
           "recover": null,
           "retry": null,
           "preconditions": null,
@@ -140,22 +105,22 @@
         {
           "type": "talk",
           "target": {
-            "npcId": 1002110,
-            "zone": 138,
+            "npcId": 1002682,
+            "zone": 128,
             "position": {
-              "x": 319.84436,
-              "y": -31.898647,
-              "z": 273.51794
+              "x": -86.930725,
+              "y": 40.999992,
+              "z": -153.91785
             }
           },
           "targets": null,
           "targetOrder": null,
           "dialogueChoices": [],
-          "id": "talk-to-npc-1002110",
-          "zone": "138",
-          "requiredZone": "138",
+          "id": "talk-to-npc-1002682",
+          "zone": "128",
+          "requiredZone": "128",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 2",
+          "expect": "questSequence(65853) >= 2",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -170,18 +135,19 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "interact-object",
-          "interactableId": 2000288,
-          "position": {
-            "x": 99.22937,
-            "y": -14.2977295,
-            "z": 141.86316
+          "type": "aethernet",
+          "from": 42,
+          "to": 46,
+          "fromPosition": {
+            "x": -58.51279,
+            "y": 42,
+            "z": -131.01299
           },
-          "id": "interact-object-2000288",
-          "zone": "138",
-          "requiredZone": "138",
+          "id": "aethernet-to-zone-135",
+          "zone": "135",
+          "requiredZone": "128",
           "resumePointFragmentId": null,
-          "expect": "objectExists(28)",
+          "expect": "playerZone() == 135",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -190,25 +156,24 @@
           "notes": null
         },
         {
-          "type": "combat",
-          "killEnemyDataIds": [
-            28
-          ],
-          "spawn": "overworldEnemies",
-          "location": {
-            "npcId": 0,
-            "zone": 138,
+          "type": "talk",
+          "target": {
+            "npcId": 1002112,
+            "zone": 135,
             "position": {
-              "x": 101.8976,
-              "y": -14.503438,
-              "z": 142.62378
+              "x": 561.6693,
+              "y": 89.783,
+              "z": -81.52899
             }
           },
-          "id": "defeat-28",
-          "zone": "138",
-          "requiredZone": "138",
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002112",
+          "zone": "135",
+          "requiredZone": "135",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 3",
+          "expect": "questSequence(65853) >= 3",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -223,40 +188,24 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "fragment",
-          "ref": "travel/tp-limsa-marauder",
-          "params": null,
-          "id": "fragment-back-to-marauders-guild",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
           "type": "talk",
           "target": {
-            "npcId": 1000927,
-            "zone": 128,
+            "npcId": 1002683,
+            "zone": 135,
             "position": {
-              "x": -1.2055054,
-              "y": 44.999886,
-              "z": -255.8786
+              "x": 559.6245,
+              "y": 89.783,
+              "z": -80.1557
             }
           },
           "targets": null,
           "targetOrder": null,
           "dialogueChoices": [],
-          "id": "talk-to-npc-1000927",
-          "zone": "128",
-          "requiredZone": "128",
+          "id": "talk-to-npc-1002683-again",
+          "zone": "135",
+          "requiredZone": "135",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 4",
+          "expect": "questSequence(65853) >= 4",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -271,19 +220,14 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "aethernet",
-          "from": 48,
-          "to": 45,
-          "fromPosition": {
-            "x": -3.157727,
-            "y": 44,
-            "z": -217.55154
-          },
-          "id": "aethernet-to-zone-134",
-          "zone": "134",
-          "requiredZone": "128",
+          "type": "fragment",
+          "ref": "travel/tp-aleport",
+          "params": null,
+          "id": "fragment-travel-tp-aleport",
+          "zone": null,
+          "requiredZone": null,
           "resumePointFragmentId": null,
-          "expect": "playerZone() == 134",
+          "expect": null,
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -294,22 +238,22 @@
         {
           "type": "talk",
           "target": {
-            "npcId": 1002111,
-            "zone": 134,
+            "npcId": 1002113,
+            "zone": 138,
             "position": {
-              "x": -206.80554,
-              "y": 41.757885,
-              "z": -39.627747
+              "x": 312.45886,
+              "y": -24.483091,
+              "z": 212.84802
             }
           },
           "targets": null,
           "targetOrder": null,
           "dialogueChoices": [],
-          "id": "talk-to-npc-1002111",
-          "zone": "134",
-          "requiredZone": "134",
+          "id": "talk-to-npc-1002113",
+          "zone": "138",
+          "requiredZone": "138",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 5",
+          "expect": "questSequence(65853) >= 5",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -324,24 +268,38 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "use-action",
-          "actionType": "action",
-          "actionId": 31,
-          "targetNpcId": 2001486,
-          "location": {
-            "npcId": 2001486,
-            "zone": 134,
-            "position": {
-              "x": -225.33002,
-              "y": 42.191162,
-              "z": -35.202576
-            }
+          "type": "pickup-item",
+          "interactableId": 2000289,
+          "position": {
+            "x": 348.34814,
+            "y": -18.60083,
+            "z": 168.3833
           },
-          "id": "use-action-31-on-2001486",
-          "zone": null,
-          "requiredZone": null,
+          "id": "pickup-item-2000525",
+          "zone": "138",
+          "requiredZone": "138",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 6",
+          "expect": "playerHasItem(2000525)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "pickup-item",
+          "interactableId": 2000290,
+          "position": {
+            "x": 297.38306,
+            "y": -14.2977295,
+            "z": 148.85168
+          },
+          "id": "pickup-item-2000526",
+          "zone": "138",
+          "requiredZone": "138",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000526)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -356,24 +314,74 @@
       "skipIf": null,
       "steps": [
         {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 329,
+          "entryKind": "talk",
+          "entryTargetId": 1002684,
+          "entryPosition": {
+            "x": 299.1836,
+            "y": 0.7139131,
+            "z": 86.10657
+          },
+          "id": "spd-329",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(65853) >= 7",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 7,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/tp-moarby-drydocks",
+          "params": null,
+          "id": "fragment-travel-tp-moarby-drydocks",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
           "type": "talk",
           "target": {
-            "npcId": 1002111,
-            "zone": 134,
+            "npcId": 1002112,
+            "zone": 135,
             "position": {
-              "x": -206.80554,
-              "y": 41.757885,
-              "z": -39.627747
+              "x": 561.6693,
+              "y": 89.783,
+              "z": -81.52899
             }
           },
           "targets": null,
           "targetOrder": null,
-          "dialogueChoices": [],
-          "id": "talk-to-npc-1002111-again",
-          "zone": "134",
-          "requiredZone": "134",
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "2052"
+            }
+          ],
+          "id": "talk-to-npc-1002112-again",
+          "zone": "135",
+          "requiredZone": "135",
           "resumePointFragmentId": null,
-          "expect": "questSequence(65852) >= 255",
+          "expect": "questSequence(65853) >= 255",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -391,7 +399,7 @@
           "type": "fragment",
           "ref": "travel/tp-limsa-marauder",
           "params": null,
-          "id": "fragment-back-to-mar-guild-2",
+          "id": "fragment-travel-tp-limsa-marauder",
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
@@ -419,7 +427,7 @@
           "zone": "128",
           "requiredZone": "128",
           "resumePointFragmentId": null,
-          "expect": "isQuestComplete(65852)",
+          "expect": "isQuestComplete(65853)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,

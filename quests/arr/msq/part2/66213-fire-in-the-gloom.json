@@ -1,0 +1,224 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66213,
+  "name": "Fire in the Gloom",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 16,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000100,
+    "zone": 132,
+    "position": {
+      "x": 23.819275,
+      "y": -8,
+      "z": 115.92273
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000100,
+            "zone": 132,
+            "position": {
+              "x": 23.819275,
+              "y": -8,
+              "z": 115.92273
+            }
+          },
+          "id": "accept-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": "travel/tp-gridania",
+          "expect": "isQuestAccepted(66213)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 3,
+          "id": "teleport-to-3",
+          "zone": "148",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": "not isAttuned(3)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 2,
+          "to": 31,
+          "fromPosition": {
+            "x": 38.748535,
+            "y": 1.1999676,
+            "z": 39.288025
+          },
+          "id": "aethernet-to-zone-148",
+          "zone": "148",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": "isAttuned(3)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 3,
+          "location": {
+            "npcId": 3,
+            "zone": 148,
+            "position": {
+              "x": 13.076904,
+              "y": 0.56451416,
+              "z": 35.90442
+            }
+          },
+          "id": "attune-aetheryte-3",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(3)",
+          "skipIf": "isAttuned(3)",
+          "stopDistance": 5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004612,
+            "zone": 148,
+            "position": {
+              "x": -114.94629,
+              "y": -39.702168,
+              "z": 335.46948
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1004612",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66213) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "dungeon-trial",
+          "contentFinderConditionId": 2,
+          "id": "dungeon-trial",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66213) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/tp-gridania",
+          "params": null,
+          "id": "fragment-travel-tp-gridania",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000100,
+            "zone": 132,
+            "position": {
+              "x": 23.819275,
+              "y": -8,
+              "z": 115.92273
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66213)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
