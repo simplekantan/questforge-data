@@ -100,7 +100,7 @@
           "id": "defeat-349",
           "zone": "134",
           "requiredZone": "134",
-          "resumePointFragmentId": null,
+          "resumePointFragmentId": "travel/tp-summerford",
           "expect": "questSequence(66004) >= 2",
           "skipIf": null,
           "stopDistance": null,

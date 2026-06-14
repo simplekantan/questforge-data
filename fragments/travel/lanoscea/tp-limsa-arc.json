@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/lanoscea/tp-limsa-arc",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 8,
+      "id": "teleport-to-8",
+      "zone": "129",
+      "requiredZone": "134",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 129",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "aethernet",
+      "from": 8,
+      "to": 43,
+      "fromPosition": {
+        "x": -78.126495,
+        "y": 18.800325,
+        "z": -1.1835054
+      },
+      "id": "aethernet-intra-zone-43",
+      "zone": "129",
+      "requiredZone": "129",
+      "resumePointFragmentId": null,
+      "expect": "objectExistsInRange(43, 5)",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

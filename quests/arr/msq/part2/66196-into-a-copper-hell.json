@@ -251,6 +251,27 @@
       ]
     },
     {
+      "sequence": 5,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "cutscene",
+          "skip": "ifAllowed",
+          "id": "cutscene",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66196) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
       "sequence": 255,
       "skipIf": null,
       "steps": [

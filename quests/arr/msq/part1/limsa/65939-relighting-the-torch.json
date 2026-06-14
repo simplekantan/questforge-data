@@ -66,6 +66,27 @@
       "skipIf": null,
       "steps": [
         {
+          "type": "travel",
+          "destination": {
+            "zone": 138,
+            "position": {"x": 427.38, "y": 15.01, "z": 449.70},
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "de-aggro-if-fate",
+          "zone": "138",
+          "requiredZone": "138",
+          "resumePointFragmentId": "travel/tp-swiftperch",
+          "expect": "playerNear({\"x\": 427.38, \"y\": 15.01, \"z\": 449.70}, 1)",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
           "type": "talk",
           "target": {
             "npcId": 1003246,
@@ -82,7 +103,7 @@
           "id": "talk-step-1003246",
           "zone": "138",
           "requiredZone": "138",
-          "resumePointFragmentId": null,
+          "resumePointFragmentId": "travel/tp-swiftperch",
           "expect": "playerHasItem(2000343)",
           "skipIf": null,
           "stopDistance": null,
@@ -174,6 +195,27 @@
       "sequence": 4,
       "skipIf": null,
       "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 138,
+            "position": {"x": 427.38, "y": 15.01, "z": 449.70},
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "de-aggro-if-fate-2",
+          "zone": "138",
+          "requiredZone": "138",
+          "resumePointFragmentId": "travel/tp-swiftperch",
+          "expect": "playerNear({\"x\": 427.38, \"y\": 15.01, \"z\": 449.70}, 1)",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
         {
           "type": "hand-over-item",
           "target": {

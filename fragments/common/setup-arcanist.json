@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "common/setup-arcanist",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "change-job",
+      "jobId": 26,
+      "id": "change-job",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": "isPlayerJob(26)",
+      "skipIf": "isPlayerJob(26)",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "equip-best-gear",
+      "id": "equip-best-gear",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": null,
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "register-gearset",
+      "id": "register-gearset",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": null,
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
