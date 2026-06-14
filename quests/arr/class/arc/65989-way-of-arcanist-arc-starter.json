@@ -1,0 +1,288 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 65989,
+  "name": "Way of the Arcanist",
+  "expansion": "arr",
+  "category": "class",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "7.51",
+  "requirements": {
+    "minLevel": 1,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000895,
+    "zone": 129,
+    "position": {
+      "x": -335.74432,
+      "y": 12.899764,
+      "z": 1.3884888
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "playerZone() == 181",
+  "notes": "skipIf guards against trying to accept/navigate while in tutorial zone",
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000895,
+            "zone": 129,
+            "position": {
+              "x": -335.74432,
+              "y": 12.899764,
+              "z": 1.3884888
+            }
+          },
+          "id": "accept-quest",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": "travel/limsa/aethernet-to-arc",
+          "expect": "isQuestAccepted(65989)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000909,
+            "zone": 129,
+            "position": {
+              "x": -326.37524,
+              "y": 12.899658,
+              "z": 9.994568
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1000909",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(65989) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "aethernet",
+          "from": 43,
+          "to": 46,
+          "fromPosition": {
+            "x": -335.4245,
+            "y": 11.999181,
+            "z": 54.599594
+          },
+          "id": "aethernet-to-zone-135",
+          "zone": "135",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 135",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            347
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 135,
+            "position": {
+              "x": 8.139988,
+              "y": 64.83374,
+              "z": 97.60218
+            }
+          },
+          "id": "defeat-347",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(65989, 0) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            49
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 135,
+            "position": {
+              "x": 8.139988,
+              "y": 64.83374,
+              "z": 97.60218
+            }
+          },
+          "id": "combat-step-bugs",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(65989, 1) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            324
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 135,
+            "position": {
+              "x": 222.60847,
+              "y": 52.336517,
+              "z": 24.515535
+            }
+          },
+          "id": "combat-step=aurelia",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(65989, 1) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 135,
+            "position": {
+              "x": -66.55177,
+              "y": 75.84201,
+              "z": 116.280914
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "135",
+          "requiredZone": "135",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 128",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 41,
+          "to": 43,
+          "fromPosition": {
+            "x": 14.461795,
+            "y": 40,
+            "z": 71.29354
+          },
+          "id": "aethernet-to-zone-129",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000909,
+            "zone": 129,
+            "position": {
+              "x": -326.37524,
+              "y": 12.899658,
+              "z": 9.994568
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(65989)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

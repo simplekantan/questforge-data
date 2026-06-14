@@ -19,93 +19,21 @@
   ],
   "questFile": "quests/arr/msq/part2/65781-its-probably-pirates.json",
   "expectedTransitions": [
-    {
-      "stepId": "accept-quest",
-      "actionType": "interact"
-    },
-    {
-      "stepId": "aethernet-to-zone-129",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "aethernet-to-zone-129",
-      "actionType": "useaethernet"
-    },
-    {
-      "actionType": "wait"
-    },
-    {
-      "stepId": "talk-to-npc-1003621",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "talk-to-npc-1003621",
-      "actionType": "interact"
-    },
-    {
-      "stepId": "teleport-to-14",
-      "actionType": "teleport"
-    },
-    {
-      "actionType": "wait"
-    },
-    {
-      "stepId": "talk-to-npc-1017075",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "talk-to-npc-1017075",
-      "actionType": "interact"
-    },
-    {
-      "stepId": "talk-to-npc-1004472",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "talk-to-npc-1004472",
-      "actionType": "interact"
-    },
-    {
-      "stepId": "do-satasha",
-      "actionType": "enterduty"
-    },
-    {
-      "stepId": "do-satasha",
-      "actionType": "wait"
-    },
-    {
-      "actionType": "wait"
-    },
-    {
-      "stepId": "equip-best-gear",
-      "actionType": "equipbestgear"
-    },
-    {
-      "stepId": "teleport-to-8",
-      "actionType": "teleport"
-    },
-    {
-      "actionType": "wait"
-    },
-    {
-      "stepId": "travel-step",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "aethernet-to-zone-128",
-      "actionType": "useaethernet"
-    },
-    {
-      "actionType": "wait"
-    },
-    {
-      "stepId": "turn-in-quest",
-      "actionType": "navigate"
-    },
-    {
-      "stepId": "turn-in-quest",
-      "actionType": "interact"
-    }
+    { "stepId": "accept-quest", "actionType": "interact" },
+    { "stepId": "aethernet-to-zone-129", "actionType": "navigate" },
+    { "stepId": "aethernet-to-zone-129", "actionType": "useaethernet" },
+    { "actionType": "wait" },
+    { "stepId": "talk-to-npc-1003621", "actionType": "navigate" },
+    { "stepId": "talk-to-npc-1003621", "actionType": "interact" },
+    { "stepId": "teleport-to-14", "actionType": "teleport" },
+    { "actionType": "wait" },
+    { "stepId": "talk-to-npc-1017075", "actionType": "navigate" },
+    { "stepId": "talk-to-npc-1017075", "actionType": "interact" },
+    { "stepId": "talk-to-npc-1004472", "actionType": "navigate" },
+    { "stepId": "talk-to-npc-1004472", "actionType": "interact" },
+    { "stepId": "do-satasha", "actionType": "enterduty" },
+    { "stepId": "equip-best-gear", "actionType": "equipbestgear" },
+    { "stepId": "teleport-to-8", "actionType": "teleport" }
   ],
   "terminalOutcome": "done",
   "initialOverrides": {
@@ -113,6 +41,7 @@
     "positionX": 17.71562,
     "positionY": 40.21601,
     "positionZ": -4.7281933,
-    "questSequence": 0
+    "questSequence": 0,
+    "attuned": [14]
   }
 }

@@ -1,9 +1,9 @@
 {
   "schemaVersion": "1.0.0",
-  "id": 66214,
-  "name": "Call of the Desert",
+  "id": 66639,
+  "name": "Topaz Teachings",
   "expansion": "arr",
-  "category": "msq",
+  "category": "class",
   "enabled": true,
   "supportStatus": {
     "implementation": "partial",
@@ -12,19 +12,19 @@
   },
   "lastVerifiedPatch": "unknown",
   "requirements": {
-    "minLevel": 16,
+    "minLevel": 15,
     "maxLevel": null,
     "requiredJob": null,
     "requiredStartingClass": null,
     "prereqs": []
   },
   "acceptFrom": {
-    "npcId": 1000100,
-    "zone": 132,
+    "npcId": 1000909,
+    "zone": 129,
     "position": {
-      "x": 23.819275,
-      "y": -8,
-      "z": 115.92273
+      "x": -326.37524,
+      "y": 12.899658,
+      "z": 9.994568
     }
   },
   "chain": null,
@@ -37,8 +37,10 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "equip-best-gear",
-          "id": "equip-best-gear",
+          "type": "fragment",
+          "ref": "common/setup-arcanist",
+          "params": null,
+          "id": "fragment-common-setup-arcanist",
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
@@ -53,19 +55,57 @@
         {
           "type": "accept",
           "target": {
-            "npcId": 1000100,
-            "zone": 132,
+            "npcId": 1000909,
+            "zone": 129,
             "position": {
-              "x": 23.819275,
-              "y": -8,
-              "z": 115.92273
+              "x": -326.37524,
+              "y": 12.899658,
+              "z": 9.994568
             }
           },
           "id": "accept-quest",
-          "zone": "132",
-          "requiredZone": "132",
+          "zone": "129",
+          "requiredZone": "129",
           "resumePointFragmentId": null,
-          "expect": "isQuestAccepted(66214)",
+          "expect": "isQuestAccepted(66639)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1005199,
+            "zone": 129,
+            "position": {
+              "x": -348.3177,
+              "y": -2.3744698,
+              "z": 11.917236
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "32758"
+            }
+          ],
+          "id": "talk-to-npc-1005199",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66639) >= 255",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -80,38 +120,22 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "fragment",
-          "ref": "travel/thanalan/tp-uldah",
-          "params": null,
-          "id": "fragment-travel-uldah-tp-uldah",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
           "type": "turn-in",
           "target": {
-            "npcId": 1001353,
-            "zone": 130,
+            "npcId": 1000909,
+            "zone": 129,
             "position": {
-              "x": 21.072632,
-              "y": 7.45,
-              "z": -78.78235
+              "x": -326.37524,
+              "y": 12.899658,
+              "z": 9.994568
             }
           },
           "dialogueChoices": [],
           "id": "turn-in-quest",
-          "zone": "130",
-          "requiredZone": "130",
+          "zone": "129",
+          "requiredZone": "129",
           "resumePointFragmentId": null,
-          "expect": "isQuestComplete(66214)",
+          "expect": "isQuestComplete(66639)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
