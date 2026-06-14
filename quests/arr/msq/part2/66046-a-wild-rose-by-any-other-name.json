@@ -1,0 +1,254 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66046,
+  "name": "A Wild Rose by Any Other Name",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 17,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1003783,
+    "zone": 212,
+    "position": {
+      "x": 39.29187,
+      "y": 1.2148079,
+      "z": 0.8086548
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1003783,
+            "zone": 212,
+            "position": {
+              "x": 39.29187,
+              "y": 1.2148079,
+              "z": 0.8086548
+            }
+          },
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66046)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null,
+          "dialogueChoices": [
+            {"type": "list", "answer": "0"}
+          ]
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1005119,
+            "zone": 212,
+            "position": {
+              "x": 33.37146,
+              "y": 1.1999971,
+              "z": 6.454529
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1005119",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66046) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 18,
+          "id": "teleport-to-18",
+          "zone": "130",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 130",
+          "skipIf": "not isAttuned(18)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "teleport",
+          "aetheryteId": 9,
+          "id": "teleport-to-9",
+          "zone": "130",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 130",
+          "skipIf": "isAttuned(18)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 9,
+          "to": 39,
+          "fromPosition": {
+            "x": -140.55011,
+            "y": -3.1548882,
+            "z": -169.30328
+          },
+          "id": "aethernet-to-zone-141",
+          "zone": "141",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 141",
+          "skipIf": "isAttuned(18)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 53,
+          "location": {
+            "npcId": 53,
+            "zone": 141,
+            "position": {
+              "x": -16.159302,
+              "y": 0.32037354,
+              "z": -166.58276
+            }
+          },
+          "id": "attune-aetheryte-53",
+          "zone": "141",
+          "requiredZone": "141",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(53)",
+          "skipIf": "isAttuned(18)",
+          "stopDistance": 4.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 141,
+            "position": {
+              "x": 453.0158,
+              "y": -17.999832,
+              "z": -181.74303
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "141",
+          "requiredZone": "141",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 145",
+          "skipIf": "isAttuned(18)",
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 18,
+          "location": {
+            "npcId": 18,
+            "zone": 145,
+            "position": {
+              "x": -386.3432,
+              "y": -57.1756,
+              "z": 142.59558
+            }
+          },
+          "id": "attune-aetheryte-18",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(18)",
+          "skipIf": "isAttuned(18)",
+          "stopDistance": 4,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1003929,
+            "zone": 145,
+            "position": {
+              "x": -378.65265,
+              "y": -55.75492,
+              "z": 106.79785
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66046)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
