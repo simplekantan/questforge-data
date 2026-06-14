@@ -194,7 +194,7 @@
               "z": 24.515535
             }
           },
-          "id": "combat-step=aurelia",
+          "id": "combat-step-aurelia",
           "zone": "135",
           "requiredZone": "135",
           "resumePointFragmentId": null,
