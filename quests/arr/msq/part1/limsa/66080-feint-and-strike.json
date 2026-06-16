@@ -114,59 +114,16 @@
           "notes": null
         },
         {
-          "type": "travel",
-          "destination": {
-            "zone": 280,
-            "position": {
-              "x": 667.83215,
-              "y": 8.270772,
-              "z": 524.1686
-            },
-            "aetheryteId": null
-          },
-          "routeHint": {
-            "npcDialogue": {
-              "target": {
-                "npcId": 1003283,
-                "zone": 280,
-                "position": {
-                  "x": 668.0552,
-                  "y": 7.297715,
-                  "z": 533.1654
-                }
-              },
-              "dialogueChoices": [
-                {
-                  "type": "list",
-                  "prompt": null,
-                  "answer": "0"
-                },
-                {
-                  "type": "yesno",
-                  "prompt": null,
-                  "answer": "yes"
-                }
-              ]
-            }
-          },
-          "useMount": null,
-          "id": "npc-dialogue-to-zone-280",
-          "zone": "280",
-          "requiredZone": "280",
-          "resumePointFragmentId": null,
-          "expect": "playerZone() == 280",
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "duty",
-          "kind": "spd",
+          "type": "single-player-duty",
           "contentFinderConditionId": 334,
-          "id": "duty-step",
+          "entryKind": "talk",
+          "entryTargetId": 1003283,
+          "entryPosition": {
+            "x": 668.0552,
+            "y": 7.297715,
+            "z": 533.1654
+          },
+          "id": "spd-334",
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
