@@ -51,7 +51,7 @@
           "id": "accept-quest",
           "zone": "152",
           "requiredZone": "152",
-          "resumePointFragmentId": "travel/shroug/tp-hawthorne-hut",
+          "resumePointFragmentId": "travel/shroud/tp-hawthorne-hut",
           "expect": "isQuestAccepted(66280)",
           "skipIf": null,
           "stopDistance": null,
