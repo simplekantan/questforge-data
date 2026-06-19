@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 69398,
+  "name": "Nouveau Riche",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 23,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000590,
+    "zone": 153,
+    "position": {
+      "x": -165.9419,
+      "y": 9.869228,
+      "z": -81.34589
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(69398)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006199,
+            "zone": 153,
+            "position": {
+              "x": -141.71057,
+              "y": 6.568114,
+              "z": -23.178528
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006199",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69398) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006201,
+            "zone": 153,
+            "position": {
+              "x": -65.4765,
+              "y": 4.3282256,
+              "z": -27.237366
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "objectExistsInRange(62, 15)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            62
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 153,
+            "position": {
+              "x": -64.7806,
+              "y": 4.206458,
+              "z": -29.493044
+            }
+          },
+          "id": "defeat-62",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69398) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006201,
+            "zone": 153,
+            "position": {
+              "x": -65.4765,
+              "y": 4.3282256,
+              "z": -27.237366
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006201",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69398) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 311,
+          "entryKind": "talk",
+          "entryTargetId": 1006203,
+          "entryPosition": {
+            "x": 32.700073,
+            "y": 10.692124,
+            "z": -12.985474
+          },
+          "id": "spd-311",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69398) >= 5",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(69398)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

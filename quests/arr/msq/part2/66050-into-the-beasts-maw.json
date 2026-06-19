@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "id": 66080,
-  "name": "Feint and Strike",
+  "id": 66050,
+  "name": "Into the Beast's Maw",
   "expansion": "arr",
   "category": "msq",
   "enabled": true,
@@ -12,19 +12,19 @@
   },
   "lastVerifiedPatch": "unknown",
   "requirements": {
-    "minLevel": 14,
+    "minLevel": 24,
     "maxLevel": null,
     "requiredJob": null,
     "requiredStartingClass": null,
     "prereqs": []
   },
   "acceptFrom": {
-    "npcId": 1000972,
-    "zone": 128,
+    "npcId": 1000590,
+    "zone": 153,
     "position": {
-      "x": 20.279175,
-      "y": 40.19993,
-      "z": -6.1189575
+      "x": -165.9419,
+      "y": 9.869228,
+      "z": -81.34589
     }
   },
   "chain": null,
@@ -39,19 +39,20 @@
         {
           "type": "accept",
           "target": {
-            "npcId": 1000972,
-            "zone": 128,
+            "npcId": 1000590,
+            "zone": 153,
             "position": {
-              "x": 20.279175,
-              "y": 40.19993,
-              "z": -6.1189575
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
             }
           },
+          "dialogueChoices": [],
           "id": "accept-quest",
-          "zone": "128",
-          "requiredZone": "128",
-          "resumePointFragmentId": "fragment-travel-tp-limsa-marauder",
-          "expect": "isQuestAccepted(66080)",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": "travel/shroud/tp-quarrymill",
+          "expect": "isQuestAccepted(66050)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -66,24 +67,24 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "hand-over-item",
+          "type": "talk",
           "target": {
-            "npcId": 1003282,
-            "zone": 128,
+            "npcId": 1000393,
+            "zone": 153,
             "position": {
-              "x": -3.03656,
-              "y": 48.168007,
-              "z": -261.70752
+              "x": -89.463684,
+              "y": 3.318795,
+              "z": -168.9021
             }
           },
-          "items": [
-            2000519
-          ],
-          "id": "hand-over-item-2000519",
-          "zone": "128",
-          "requiredZone": "128",
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000393",
+          "zone": "153",
+          "requiredZone": "153",
           "resumePointFragmentId": null,
-          "expect": "not(playerHasItem(2000519))",
+          "expect": "questSequence(66050) >= 2",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -98,36 +99,13 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "fragment",
-          "ref": "travel/tp-swiftperch",
-          "params": null,
-          "id": "fragment-travel-tp-swiftperch",
+          "type": "dungeon-trial",
+          "contentFinderConditionId": 1,
+          "id": "dungeon-trial",
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": null,
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
-          "type": "single-player-duty",
-          "contentFinderConditionId": 334,
-          "entryKind": "talk",
-          "entryTargetId": 1003283,
-          "entryPosition": {
-            "x": 668.0552,
-            "y": 7.297715,
-            "z": 533.1654
-          },
-          "id": "spd-334",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": "questSequence(66080) >= 3",
+          "expect": "questSequence(66050) >= 3",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -148,7 +126,7 @@
           "zone": null,
           "requiredZone": null,
           "resumePointFragmentId": null,
-          "expect": "questSequence(66080) >= 255",
+          "expect": "questSequence(66050) >= 255",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,
@@ -163,38 +141,22 @@
       "skipIf": null,
       "steps": [
         {
-          "type": "fragment",
-          "ref": "travel/tp-limsa-marauder",
-          "params": null,
-          "id": "fragment-travel-tp-limsa-marauder",
-          "zone": null,
-          "requiredZone": null,
-          "resumePointFragmentId": null,
-          "expect": null,
-          "skipIf": "playerZone() == 128",
-          "stopDistance": null,
-          "recover": null,
-          "retry": null,
-          "preconditions": null,
-          "notes": null
-        },
-        {
           "type": "turn-in",
           "target": {
-            "npcId": 1003282,
-            "zone": 128,
+            "npcId": 1000590,
+            "zone": 153,
             "position": {
-              "x": -3.03656,
-              "y": 48.168007,
-              "z": -261.70752
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
             }
           },
           "dialogueChoices": [],
           "id": "turn-in-quest",
-          "zone": "128",
-          "requiredZone": "128",
+          "zone": "153",
+          "requiredZone": "153",
           "resumePointFragmentId": null,
-          "expect": "isQuestComplete(66080)",
+          "expect": "isQuestComplete(66050)",
           "skipIf": null,
           "stopDistance": null,
           "recover": null,

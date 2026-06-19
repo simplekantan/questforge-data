@@ -1,0 +1,266 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66216,
+  "name": "The Company You Keep (Twin Adder)",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1004884,
+    "zone": 212,
+    "position": {
+      "x": 38.895264,
+      "y": 1.2000012,
+      "z": 3.463745
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "isQuestComplete(66217) or isQuestComplete(66218)",
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1004884,
+            "zone": 212,
+            "position": {
+              "x": 38.895264,
+              "y": 1.2000012,
+              "z": 3.463745
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66216)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2",
+          "zone": "132",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002394,
+            "zone": 132,
+            "position": {
+              "x": -69.5354,
+              "y": -0.50095016,
+              "z": -9.99469
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002394",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66216) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 4,
+          "id": "teleport-to-4",
+          "zone": "148",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 152",
+          "skipIf": "not isAttuned(4)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "teleport",
+          "aetheryteId": 3,
+          "id": "teleport-to-3",
+          "zone": "148",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": "isAttuned(4)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 148,
+            "position": {
+              "x": 386.66772,
+              "y": -3.3768134,
+              "z": -190.10591
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 152",
+          "skipIf": "isAttuned(4)",
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 4,
+          "location": {
+            "npcId": 4,
+            "zone": 152,
+            "position": {
+              "x": -186.54156,
+              "y": 3.7994385,
+              "z": 297.56616
+            }
+          },
+          "id": "attune-aetheryte-4",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(4)",
+          "skipIf": "isAttuned(4)",
+          "stopDistance": 5.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 340,
+          "entryKind": "talk",
+          "entryTargetId": 1004886,
+          "entryPosition": {
+            "x": 30.319702,
+            "y": 8.422709,
+            "z": 475.30322
+          },
+          "id": "spd-340",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66216) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2-again",
+          "zone": "132",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002394,
+            "zone": 132,
+            "position": {
+              "x": -69.5354,
+              "y": -0.50095016,
+              "z": -9.99469
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66216)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

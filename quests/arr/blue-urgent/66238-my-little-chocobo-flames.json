@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66238,
+  "name": "My Little Chocobo (Immortal Flames)",
+  "expansion": "arr",
+  "category": "blue-urgent",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1004576,
+    "zone": 130,
+    "position": {
+      "x": -141.64954,
+      "y": 4.1,
+      "z": -114.67157
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "isQuestComplete(66216) or isQuestComplete(66217) or not isQuestComplete(66221)",
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1004576,
+            "zone": 130,
+            "position": {
+              "x": -141.64954,
+              "y": 4.1,
+              "z": -114.67157
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": "travel/thanalan/tp-uldah",
+          "expect": "isQuestAccepted(66238)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "purchase-item",
+          "target": {
+            "npcId": 1002390,
+            "zone": 130,
+            "position": {
+              "x": -143.45007,
+              "y": 4.5499268,
+              "z": -108.537415
+            }
+          },
+          "itemId": 6019,
+          "quantity": 1,
+          "currency": "gcSeals",
+          "gcCategory": 2,
+          "gcRankTier": 0,
+          "id": "buy-item-6019",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(6019,1)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1001978,
+            "zone": 130,
+            "position": {
+              "x": 55.344482,
+              "y": 4.1240783,
+              "z": -143.9079
+            }
+          },
+          "items": [
+            6019
+          ],
+          "id": "hand-over-item-6019",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66238) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006003,
+            "zone": 130,
+            "position": {
+              "x": 51.621216,
+              "y": 4,
+              "z": -142.22937
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1006003",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66238) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1001978,
+            "zone": 130,
+            "position": {
+              "x": 55.344482,
+              "y": 4.1240783,
+              "z": -143.9079
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66238)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "use-item",
+          "kind": "inventoryItem",
+          "itemId": 6001,
+          "id": "use-item-6001",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "not playerHasItem(6001)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

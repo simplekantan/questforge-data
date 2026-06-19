@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66246,
+  "name": "First Impressions",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000540,
+    "zone": 152,
+    "position": {
+      "x": -238.17816,
+      "y": 3.543561,
+      "z": 283.71094
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000540,
+            "zone": 152,
+            "position": {
+              "x": -238.17816,
+              "y": 3.543561,
+              "z": 283.71094
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66246)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "pickup-item",
+          "interactableId": 1000766,
+          "position": {
+            "x": -485.70996,
+            "y": 9.170654,
+            "z": 177.203
+          },
+          "id": "pickup-item-2000571",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000571)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "use-item-on-object",
+          "interactableId": 2001902,
+          "position": {
+            "x": -386.6789,
+            "y": -0.015319824,
+            "z": 192.46204
+          },
+          "kind": "keyItem",
+          "itemId": 2000571,
+          "id": "use-item-2000571-on-2001902",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "objectExists(33)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            33
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 152,
+            "position": {
+              "x": -387.3967,
+              "y": -0.06091982,
+              "z": 190.49156
+            }
+          },
+          "id": "defeat-33",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66246) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000540,
+            "zone": 152,
+            "position": {
+              "x": -238.17816,
+              "y": 3.543561,
+              "z": 283.71094
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66246)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

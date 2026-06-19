@@ -1,0 +1,182 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66045,
+  "name": "The Scions of the Seventh Dawn",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "7.51",
+  "requirements": {
+    "minLevel": 17,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1001353,
+    "zone": 130,
+    "position": {
+      "x": 21.072632,
+      "y": 7.45,
+      "z": -78.78235
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "equip-best-gear",
+          "id": "equip-best-gear",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1001353,
+            "zone": 130,
+            "position": {
+              "x": 21.072632,
+              "y": 7.45,
+              "z": -78.78235
+            }
+          },
+          "id": "accept-quest",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": "travel/thanalan/tp-uldah",
+          "expect": "isQuestAccepted(66045)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 17,
+          "id": "teleport-to-17",
+          "zone": "140",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 140",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004603,
+            "zone": 140,
+            "position": {
+              "x": -489.8299,
+              "y": 21.48999,
+              "z": -381.97913
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "list",
+              "prompt": null,
+              "answer": "1065353216"
+            }
+          ],
+          "id": "talk-to-npc-1004603",
+          "zone": "140",
+          "requiredZone": "140",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66045) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001711,
+          "position": {
+            "x": -480.9181,
+            "y": 18.00103,
+            "z": -386.862
+          },
+          "id": "interact-object-2001711",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 212",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1005012,
+            "zone": 212,
+            "position": {
+              "x": 22.507019,
+              "y": 0.9999986,
+              "z": -2.02948
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66045)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

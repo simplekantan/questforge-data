@@ -171,7 +171,13 @@
           "retry": null,
           "preconditions": null,
           "notes": null
-        },
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
         {
           "type": "fragment",
           "ref": "travel/tp-limsa-marauder",
@@ -187,13 +193,7 @@
           "retry": null,
           "preconditions": null,
           "notes": null
-        }
-      ]
-    },
-    {
-      "sequence": 255,
-      "skipIf": null,
-      "steps": [
+        },
         {
           "type": "turn-in",
           "target": {

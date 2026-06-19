@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/return-to-waking-sands",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "use-item",
+      "kind": "inventoryItem",
+      "itemId": 30362,
+      "id": "use-item-30362",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 140",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "interact-object",
+      "interactableId": 2001711,
+      "position": {
+        "x": -480.91858,
+        "y": 17.990356,
+        "z": -386.862
+      },
+      "id": "interact-object-2001711",
+      "zone": "212",
+      "requiredZone": "212",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 212",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

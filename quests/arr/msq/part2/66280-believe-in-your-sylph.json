@@ -1,0 +1,154 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66280,
+  "name": "Believe in Your Sylph",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 24,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000580,
+    "zone": 152,
+    "position": {
+      "x": 25.65039,
+      "y": -3.7080078,
+      "z": 209.97937
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000580,
+            "zone": 152,
+            "position": {
+              "x": 25.65039,
+              "y": -3.7080078,
+              "z": 209.97937
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": "travel/shroud/tp-hawthorne-hut",
+          "expect": "isQuestAccepted(66280)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 152,
+            "position": {"x": 191.49, "y": 8.68, "z": 187.40},
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "playerNear({\"x\": 191.51, \"y\": 8.67, \"z\": 187.29}, 1)",
+          "skipIf": null,
+          "stopDistance": 0,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "use-emote",
+          "emoteId": 22,
+          "motion": true,
+          "id": "use-emote-22",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66280) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2",
+          "zone": "132",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000168,
+            "zone": 132,
+            "position": {
+              "x": -75.48645,
+              "y": -0.5013741,
+              "z": -5.081299
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66280)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

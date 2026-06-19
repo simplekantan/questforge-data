@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66261,
+  "name": "Spirited Away",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 22,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000580,
+    "zone": 152,
+    "position": {
+      "x": 25.65039,
+      "y": -3.7080078,
+      "z": 209.97937
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000580,
+            "zone": 152,
+            "position": {
+              "x": 25.65039,
+              "y": -3.7080078,
+              "z": 209.97937
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66261)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2",
+          "zone": "132",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000168,
+            "zone": 132,
+            "position": {
+              "x": -75.48645,
+              "y": -0.5013741,
+              "z": -5.081299
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000168",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66261) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 3,
+          "id": "teleport-to-3",
+          "zone": "148",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000734,
+            "zone": 148,
+            "position": {
+              "x": -2.5482788,
+              "y": -1.2191527,
+              "z": 39.96338
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000734",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66261) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 148,
+            "position": {
+              "x": 162.25237,
+              "y": -23.90425,
+              "z": 552.482
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 153",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66261)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

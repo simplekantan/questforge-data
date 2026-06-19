@@ -1,0 +1,290 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66274,
+  "name": "Sylphish Concerns",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 23,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000590,
+    "zone": 153,
+    "position": {
+      "x": -165.9419,
+      "y": 9.869228,
+      "z": -81.34589
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66274)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001949,
+          "position": {
+            "x": -142.77869,
+            "y": 14.450195,
+            "z": -130.11371
+          },
+          "id": "interact-object-2001949",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66274, 0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "fragment",
+          "ref": "quest/sylphish-investigate-2",
+          "params": null,
+          "id": "fragment-quest-sylphish-investigate-2",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "interact-object",
+          "interactableId": 2001953,
+          "position": {
+            "x": -116.41113,
+            "y": 11.032227,
+            "z": -84.97754
+          },
+          "id": "interact-object-2001953",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66274, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "fragment",
+          "ref": "quest/sylphish-concerns-3",
+          "params": null,
+          "id": "fragment-quest-sylphish-concerns-3",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "interact-object",
+          "interactableId": 2001951,
+          "position": {
+            "x": -83.32953,
+            "y": 7.1259155,
+            "z": -21.561035
+          },
+          "id": "interact-object-2001951",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66274, 0) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "fragment",
+          "ref": "quest/sylphish-concerns-4",
+          "params": null,
+          "id": "fragment-quest-sylphish-concerns-4",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "interact-object",
+          "interactableId": 2001952,
+          "position": {
+            "x": 18.722778,
+            "y": 7.614197,
+            "z": -43.137268
+          },
+          "id": "interact-object-2001952",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66274, 0) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "fragment",
+          "ref": "quest/sylphish-concerns-5",
+          "params": null,
+          "id": "fragment-quest-sylphish-concerns-5",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "interact-object",
+          "interactableId": 2001950,
+          "position": {
+            "x": 63.553833,
+            "y": 13.473633,
+            "z": -32.333923
+          },
+          "id": "interact-object-2001950",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66274) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "attune",
+          "target": 5,
+          "location": {
+            "npcId": 5,
+            "zone": 153,
+            "position": {
+              "x": 178.60681,
+              "y": 10.543945,
+              "z": -68.19263
+            }
+          },
+          "id": "attune-aetheryte-5",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(5)",
+          "skipIf": null,
+          "stopDistance": 3.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66274)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

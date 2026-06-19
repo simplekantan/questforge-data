@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "quest/sylphish-concerns-4",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {
+          "x": -51.319614,
+          "y": 2.3966444,
+          "z": -50.62649
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-1",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": -51.32, \"y\": 2.40, \"z\": -50.63}, 2)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {
+          "x": 12.115467,
+          "y": -1.195167,
+          "z": -50.739414
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-2",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": 12.12, \"y\": -1.20, \"z\": -50.74}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {
+          "x": 9.994892,
+          "y": 6.2609196,
+          "z": -28.98758
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-3",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": 9.99, \"y\": 6.26, \"z\": -28.99}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {
+          "x": 19.048237,
+          "y": 7.334647,
+          "z": -38.406067
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-4",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": 19.05, \"y\": 7.33, \"z\": -38.41}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

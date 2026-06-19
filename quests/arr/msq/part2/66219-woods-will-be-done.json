@@ -1,0 +1,113 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66219,
+  "name": "Wood's Will Be Done",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002394,
+    "zone": 132,
+    "position": {
+      "x": -69.5354,
+      "y": -0.50095016,
+      "z": -9.99469
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "isQuestComplete(66217) or isQuestComplete(66218) or not isQuestComplete(66216)",
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002394,
+            "zone": 132,
+            "position": {
+              "x": -69.5354,
+              "y": -0.50095016,
+              "z": -9.99469
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66219)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/return-to-waking-sands",
+          "params": null,
+          "id": "fragment-travel-return-to-waking-sands",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1005012,
+            "zone": 212,
+            "position": {
+              "x": 22.507019,
+              "y": 0.9999986,
+              "z": -2.02948
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66219)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

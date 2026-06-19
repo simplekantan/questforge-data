@@ -1,0 +1,136 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66273,
+  "name": "Like Fine Wine",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 23,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006193,
+    "zone": 139,
+    "position": {
+      "x": -334.0658,
+      "y": -0.81366825,
+      "z": 148.91272
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006193,
+            "zone": 139,
+            "position": {
+              "x": -334.0658,
+              "y": -0.81366825,
+              "z": 148.91272
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "139",
+          "requiredZone": "139",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66273)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 3,
+          "id": "teleport-step",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 148,
+            "position": {
+              "x": 159.85002,
+              "y": -23.945883,
+              "z": 554.3878
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "travel-step",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 153",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000590,
+            "zone": 153,
+            "position": {
+              "x": -165.9419,
+              "y": 9.869228,
+              "z": -81.34589
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66273)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
