@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66049,
+  "name": "Sylph-management",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1005128,
+    "zone": 212,
+    "position": {
+      "x": 39.29187,
+      "y": 1.2148079,
+      "z": 0.8086548
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "use-item",
+          "kind": "inventoryItem",
+          "itemId": 6001,
+          "id": "use-item-6001",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "not playerHasItem(6001)",
+          "skipIf": "not playerHasItem(6001)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": "schelduler should have grabbed mount before this quest, unlock it here."
+        },
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1005128,
+            "zone": 212,
+            "position": {
+              "x": 39.29187,
+              "y": 1.2148079,
+              "z": 0.8086548
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": "travel/return-to-the-solar",
+          "expect": "isQuestAccepted(66049)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2",
+          "zone": "132",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000168,
+            "zone": 132,
+            "position": {
+              "x": -75.48645,
+              "y": -0.5013741,
+              "z": -5.081299
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66049)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

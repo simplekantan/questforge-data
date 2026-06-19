@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 69397,
+  "name": "Microbrewing",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 23,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006193,
+    "zone": 139,
+    "position": {
+      "x": -334.0658,
+      "y": -0.81366825,
+      "z": 148.91272
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006193,
+            "zone": 139,
+            "position": {
+              "x": -334.0658,
+              "y": -0.81366825,
+              "z": 148.91272
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "139",
+          "requiredZone": "139",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(69397)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            28
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 139,
+            "position": {
+              "x": -561.12744,
+              "y": -1.9076914,
+              "z": -6.286722
+            }
+          },
+          "id": "defeat-28",
+          "zone": "139",
+          "requiredZone": "139",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(69397, 1) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006193,
+            "zone": 139,
+            "position": {
+              "x": -334.0658,
+              "y": -0.81366825,
+              "z": 148.91272
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "139",
+          "requiredZone": "139",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(69397)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "travel/shroud/tp-hawthorne-hut",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "teleport",
+      "aetheryteId": 4,
+      "id": "teleport-to-4",
+      "zone": "152",
+      "requiredZone": "148",
+      "resumePointFragmentId": null,
+      "expect": "playerZone() == 152",
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

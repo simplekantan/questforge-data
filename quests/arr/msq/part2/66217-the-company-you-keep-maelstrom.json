@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66217,
+  "name": "The Company You Keep (Maelstrom)",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1004885,
+    "zone": 212,
+    "position": {
+      "x": 36.453735,
+      "y": 1.2000011,
+      "z": 4.6845093
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "isQuestComplete(66216) or isQuestComplete(66218)",
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1004885,
+            "zone": 212,
+            "position": {
+              "x": 36.453735,
+              "y": 1.2000011,
+              "z": 4.6845093
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66217)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/tp-limsa-aft",
+          "params": null,
+          "id": "fragment-travel-tp-limsa-aft-1",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1002388,
+            "zone": 128,
+            "position": {
+              "x": 95.68933,
+              "y": 40.250282,
+              "z": 74.54028
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1002388",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66217) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "aethernet",
+          "from": 41,
+          "to": 46,
+          "fromPosition": {
+            "x": 17.912477,
+            "y": 39.999996,
+            "z": 72.03731
+          },
+          "id": "aethernet-to-zone-135",
+          "zone": "135",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 135",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 342,
+          "entryKind": "talk",
+          "entryTargetId": 1004888,
+          "entryPosition": {
+            "x": 389.2423,
+            "y": 78.360275,
+            "z": -349.05017
+          },
+          "id": "spd-342",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66217) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "fragment",
+          "ref": "travel/tp-limsa-aft",
+          "params": null,
+          "id": "fragment-travel-tp-limsa-aft",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": null,
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1002388,
+            "zone": 128,
+            "position": {
+              "x": 95.68933,
+              "y": 40.250282,
+              "z": 74.54028
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66217)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

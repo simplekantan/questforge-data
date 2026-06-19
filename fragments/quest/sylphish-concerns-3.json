@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "quest/sylphish-concerns-3",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {
+          "x": -93.34876,
+          "y": 3.933162,
+          "z": -58.86631
+        },
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-0",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": -93.35, \"y\": 3.93, \"z\": -58.87}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {"x": -91.01, "y": 2.56, "z": -22.53},
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": -91.01, \"y\": 2.56, \"z\": -22.52}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "travel",
+      "destination": {
+        "zone": 153,
+        "position": {"x": -89.09, "y": 5.49, "z": -21.76},
+        "aetheryteId": null
+      },
+      "routeHint": null,
+      "useMount": null,
+      "id": "travel-step-jump",
+      "zone": "153",
+      "requiredZone": "153",
+      "resumePointFragmentId": null,
+      "expect": "playerNear({\"x\": -89.40, \"y\": 5.20, \"z\": -21.76}, 1)",
+      "skipIf": null,
+      "stopDistance": 1,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}

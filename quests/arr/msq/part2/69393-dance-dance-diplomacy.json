@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 69393,
+  "name": "Dance Dance Diplomacy",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 21,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006674,
+    "zone": 152,
+    "position": {
+      "x": 21.98816,
+      "y": -3.7664862,
+      "z": 209.97937
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006674,
+            "zone": 152,
+            "position": {
+              "x": 21.98816,
+              "y": -3.7664862,
+              "z": 209.97937
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(69393)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "use-emote",
+          "emoteId": 11,
+          "targetNpcId": 1000576,
+          "motion": true,
+          "location": {
+            "npcId": 1000576,
+            "zone": 152,
+            "position": {
+              "x": 21.469421,
+              "y": -4.5750833,
+              "z": 221.75928
+            }
+          },
+          "id": "use-emote-11-on-1000576",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(69393, 0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "use-emote",
+          "emoteId": 11,
+          "targetNpcId": 1000563,
+          "motion": true,
+          "location": {
+            "npcId": 1000563,
+            "zone": 152,
+            "position": {
+              "x": -3.768982,
+              "y": -5.8594565,
+              "z": 217.2732
+            }
+          },
+          "id": "use-emote-11-on-1000563",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questVariableLow(69393, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "use-emote",
+          "emoteId": 11,
+          "targetNpcId": 1000587,
+          "motion": true,
+          "location": {
+            "npcId": 1000587,
+            "zone": 152,
+            "position": {
+              "x": -7.248047,
+              "y": -8.407776,
+              "z": 268.23828
+            }
+          },
+          "id": "use-emote-11-on-1000587",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69393) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006674,
+            "zone": 152,
+            "position": {
+              "x": 21.98816,
+              "y": -3.7664862,
+              "z": 209.97937
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(69393)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 69392,
+  "name": "We Come in Peace",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000168,
+    "zone": 132,
+    "position": {
+      "x": -75.48645,
+      "y": -0.5013741,
+      "z": -5.081299
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000168,
+            "zone": 132,
+            "position": {
+              "x": -75.48645,
+              "y": -0.5013741,
+              "z": -5.081299
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "132",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(69392)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "aethernet",
+          "from": 2,
+          "to": 27,
+          "fromPosition": {
+            "x": 32.913696,
+            "y": 2.670288,
+            "z": 30.014404
+          },
+          "id": "aethernet-to-zone-133",
+          "zone": "133",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 133",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000257,
+            "zone": 133,
+            "position": {
+              "x": 150.16394,
+              "y": 10.852949,
+              "z": -230.45703
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000257",
+          "zone": "133",
+          "requiredZone": "133",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69392) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 152,
+            "position": {
+              "x": -570.25507,
+              "y": 8.876717,
+              "z": 77.00769
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1001263,
+                "zone": 133,
+                "position": {
+                  "x": 181.41443,
+                  "y": -2.3519497,
+                  "z": -240.40594
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "0"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-152",
+          "zone": "152",
+          "requiredZone": "133",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 152",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 4,
+          "location": {
+            "npcId": 4,
+            "zone": 152,
+            "position": {
+              "x": -186.54156,
+              "y": 3.7994385,
+              "z": 297.56616
+            }
+          },
+          "id": "attune-aetheryte-4",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(4)",
+          "skipIf": "isAttuned(4)",
+          "stopDistance": 5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006188,
+            "zone": 152,
+            "position": {
+              "x": -236.92688,
+              "y": 3.5435789,
+              "z": 283.4973
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "152",
+          "requiredZone": "152",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(69392)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

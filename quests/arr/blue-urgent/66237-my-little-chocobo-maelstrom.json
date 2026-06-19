@@ -1,0 +1,232 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66237,
+  "name": "My Little Chocobo (Maelstrom)",
+  "expansion": "arr",
+  "category": "blue-urgent",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 20,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1003281,
+    "zone": 128,
+    "position": {
+      "x": 97.520386,
+      "y": 40.248554,
+      "z": 81.1322
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "skipIf": "isQuestComplete(66216) or isQuestComplete(66218) or not isQuestComplete(66220)",
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1003281,
+            "zone": 128,
+            "position": {
+              "x": 97.520386,
+              "y": 40.248554,
+              "z": 81.1322
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": "travel/tp-limsa-aft",
+          "expect": "isQuestAccepted(66237)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "purchase-item",
+          "target": {
+            "npcId": 1002387,
+            "zone": 128,
+            "position": {
+              "x": 95.750244,
+              "y": 40.250286,
+              "z": 76.67651
+            }
+          },
+          "itemId": 6017,
+          "quantity": 1,
+          "currency": "gcSeals",
+          "gcCategory": 2,
+          "gcRankTier": 0,
+          "id": "buy-item-6017",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(6017,1)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 41,
+          "to": 8,
+          "fromPosition": {
+            "x": 16.972038,
+            "y": 40,
+            "z": 71.057434
+          },
+          "id": "aethernet-to-zone-129",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1001027,
+            "zone": 129,
+            "position": {
+              "x": 45.792236,
+              "y": 20,
+              "z": -8.1026
+            }
+          },
+          "items": [
+            6017
+          ],
+          "id": "hand-over-item-6019",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66237) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006002,
+            "zone": 129,
+            "position": {
+              "x": 49.576538,
+              "y": 20,
+              "z": -5.722229
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [
+            {
+              "type": "yesno",
+              "prompt": null,
+              "answer": "yes"
+            }
+          ],
+          "id": "talk-to-npc-1006002",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66237) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1001027,
+            "zone": 129,
+            "position": {
+              "x": 45.792236,
+              "y": 20,
+              "z": -8.1026
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "129",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66237)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "use-item",
+          "kind": "inventoryItem",
+          "itemId": 6001,
+          "id": "use-item-6001",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "not playerHasItem(6001)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
