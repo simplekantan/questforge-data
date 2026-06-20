@@ -1,0 +1,297 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66585,
+  "name": "Pride and Duty (Will Take You from the Mountain)",
+  "expansion": "arr",
+  "category": "class",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 30,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1000927,
+    "zone": 128,
+    "position": {
+      "x": -1.2055054,
+      "y": 44.999886,
+      "z": -255.8786
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1000927,
+            "zone": 128,
+            "position": {
+              "x": -1.2055054,
+              "y": 44.999886,
+              "z": -255.8786
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "128",
+          "requiredZone": "128",
+          "resumePointFragmentId": "travel/tp-limsa-marauder",
+          "expect": "isQuestAccepted(66585)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 11,
+          "id": "teleport-to-11",
+          "zone": "137",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 137",
+          "skipIf": "not isAttuned(11)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 48,
+          "to": 44,
+          "fromPosition": {
+            "x": -3.5845046,
+            "y": 44,
+            "z": -217.89572
+          },
+          "id": "aethernet-to-zone-129",
+          "zone": "129",
+          "requiredZone": "128",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 129",
+          "skipIf": "isAttuned(11)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 137,
+            "position": {
+              "x": 610.2837,
+              "y": 11.6238,
+              "z": 391.4877
+            },
+            "aetheryteId": null
+          },
+          "routeHint": {
+            "npcDialogue": {
+              "target": {
+                "npcId": 1000868,
+                "zone": 129,
+                "position": {
+                  "x": -192.00433,
+                  "y": 0.9999907,
+                  "z": 211.68835
+                }
+              },
+              "dialogueChoices": [
+                {
+                  "type": "list",
+                  "prompt": null,
+                  "answer": "1"
+                },
+                {
+                  "type": "yesno",
+                  "prompt": null,
+                  "answer": "yes"
+                }
+              ]
+            }
+          },
+          "useMount": null,
+          "id": "npc-dialogue-to-zone-137",
+          "zone": "137",
+          "requiredZone": "129",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 137",
+          "skipIf": "isAttuned(11)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 11,
+          "location": {
+            "npcId": 11,
+            "zone": 137,
+            "position": {
+              "x": 489.15845,
+              "y": 20.828491,
+              "z": 468.80298
+            }
+          },
+          "id": "attune-aetheryte-11",
+          "zone": "137",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(11)",
+          "skipIf": "isAttuned(11)",
+          "stopDistance": 4.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006761,
+            "zone": 137,
+            "position": {
+              "x": 520.2562,
+              "y": 17.62488,
+              "z": 470.51184
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006761",
+          "zone": "137",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66585) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 359,
+          "entryKind": "talk",
+          "entryTargetId": 1006763,
+          "entryPosition": {
+            "x": 494.9568,
+            "y": 11.450662,
+            "z": 329.76257
+          },
+          "id": "spd-359",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66585) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006762,
+            "zone": 137,
+            "position": {
+              "x": 494.16345,
+              "y": 12.305895,
+              "z": 337.27014
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006762",
+          "zone": "137",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66585) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006746,
+            "zone": 137,
+            "position": {
+              "x": 460.65454,
+              "y": 8.309061,
+              "z": 74.47925
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "137",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66585)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
