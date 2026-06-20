@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0.0",
+  "fragmentId": "common/setup-warrior",
+  "parameters": [],
+  "steps": [
+    {
+      "type": "equip-gear-for-quest",
+      "itemIds": [
+        4544
+      ],
+      "id": "equip-crystal",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": "playerHasEquipped(4544)",
+      "skipIf": "playerHasEquipped(4544)",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "change-job",
+      "jobId": 21,
+      "id": "change-job-21",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": null,
+      "skipIf": "isPlayerJob(21) or playerHasEquipped(4544)",
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "equip-best-gear",
+      "id": "equip-best-gear",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": null,
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    },
+    {
+      "type": "register-gearset",
+      "id": "register-gearset",
+      "zone": null,
+      "requiredZone": null,
+      "resumePointFragmentId": null,
+      "expect": null,
+      "skipIf": null,
+      "stopDistance": null,
+      "recover": null,
+      "retry": null,
+      "preconditions": null,
+      "notes": null
+    }
+  ]
+}
