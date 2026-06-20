@@ -2,7 +2,7 @@
 
 | Expansion | Category | Covered | Total | % |
 |-----------|----------|---------|-------|---|
-| arr | class | 14 | 304 | 4.6% |
+| arr | class | 16 | 304 | 5.3% |
 | arr | msq | 66 | 295 | 22.4% |
 | heavensward | class | 0 | 166 | 0.0% |
 | heavensward | msq | 0 | 138 | 0.0% |
@@ -18,4 +18,4 @@
 | dawntrail | msq | 0 | 139 | 0.0% |
 | dawntrail | role | 0 | 35 | 0.0% |
 
-**Overall: 80 / 1820 (4.4%)**
+**Overall: 82 / 1820 (4.5%)**
