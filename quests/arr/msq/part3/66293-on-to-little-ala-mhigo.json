@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66293,
+  "name": "On to Little Ala Mhigo",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 25,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006196,
+    "zone": 145,
+    "position": {
+      "x": -63.98114,
+      "y": -20.296291,
+      "z": -5.142395
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006196,
+            "zone": 145,
+            "position": {
+              "x": -63.98114,
+              "y": -20.296291,
+              "z": -5.142395
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66293)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "travel",
+          "destination": {
+            "zone": 145,
+            "position": {
+              "x": -169.28886,
+              "y": -46.727673,
+              "z": 493.51736
+            },
+            "aetheryteId": null
+          },
+          "routeHint": null,
+          "useMount": null,
+          "id": "to-south-thanalan",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 146",
+          "skipIf": null,
+          "stopDistance": 1,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 19,
+          "location": {
+            "npcId": 19,
+            "zone": 146,
+            "position": {
+              "x": -159.3805,
+              "y": 30.105957,
+              "z": -415.45746
+            }
+          },
+          "id": "attune-aetheryte-19",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(19)",
+          "skipIf": null,
+          "stopDistance": 4,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006211,
+            "zone": 146,
+            "position": {
+              "x": -217.48688,
+              "y": 26.258211,
+              "z": -361.2574
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006211",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66293) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66293)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

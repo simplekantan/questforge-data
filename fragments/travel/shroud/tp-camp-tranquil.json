@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-    "fragmentId": "travel/shroud/tp-quarrymill",
+  "fragmentId": "travel/shroud/tp-camp-tranquil",
   "parameters": [],
   "steps": [
     {
       "type": "teleport",
-      "aetheryteId": 5,
-      "id": "teleport-to-5",
+      "aetheryteId": 6,
+      "id": "teleport-to-6",
       "zone": "153",
       "requiredZone": "148",
       "resumePointFragmentId": null,
