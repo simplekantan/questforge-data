@@ -1,0 +1,242 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 69399,
+  "name": "Terror at Fallgourd",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 27,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006688,
+    "zone": 212,
+    "position": {
+      "x": 39.29187,
+      "y": 1.2148079,
+      "z": 0.8086548
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006688,
+            "zone": 212,
+            "position": {
+              "x": 39.29187,
+              "y": 1.2148079,
+              "z": 0.8086548
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(69399)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "interact-object",
+          "interactableId": 2001717,
+          "position": {
+            "x": 25.497803,
+            "y": 2.090454,
+            "z": -0.015319824
+          },
+          "id": "interact-object-2001717",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerNear({\"x\": 21.22, \"y\": 1.02, \"z\": 0.43}, 3)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1007417,
+            "zone": 212,
+            "position": {
+              "x": 1.2359009,
+              "y": -3.0000014,
+              "z": -57.66388
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1007417",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69399) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 2,
+          "id": "teleport-to-2",
+          "zone": "132",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 132",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "aethernet",
+          "from": 2,
+          "to": 32,
+          "fromPosition": {
+            "x": 35.071495,
+            "y": 2.2000008,
+            "z": 31.303896
+          },
+          "id": "aethernet-to-zone-154",
+          "zone": "154",
+          "requiredZone": "132",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 154",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 7,
+          "location": {
+            "npcId": 7,
+            "zone": 154,
+            "position": {
+              "x": -41.58087,
+              "y": -38.55963,
+              "z": 233.7528
+            }
+          },
+          "id": "attune-aetheryte-7",
+          "zone": "154",
+          "requiredZone": "154",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(7)",
+          "skipIf": "isAttuned(7)",
+          "stopDistance": 4,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006240,
+            "zone": 154,
+            "position": {
+              "x": 14.389221,
+              "y": -44.865715,
+              "z": 262.65344
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006240",
+          "zone": "154",
+          "requiredZone": "154",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(69399) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "use-emote",
+          "emoteId": 35,
+          "targetNpcId": 1006240,
+          "motion": true,
+          "location": {
+            "npcId": 1006240,
+            "zone": 154,
+            "position": {
+              "x": 14.389221,
+              "y": -44.865715,
+              "z": 262.65344
+            }
+          },
+          "id": "use-emote-35-on-1006240",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(69399)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
