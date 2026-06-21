@@ -1,0 +1,333 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66698,
+  "name": "My Feisty Little Chocobo",
+  "expansion": "arr",
+  "category": "blue-urgent",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 30,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1002754,
+    "zone": 153,
+    "position": {
+      "x": -219.22644,
+      "y": 20.923328,
+      "z": 338.4298
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 6,
+          "id": "teleport-to-6",
+          "zone": "153",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 153",
+          "skipIf": "not isAttuned(6)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "teleport",
+          "aetheryteId": 5,
+          "id": "teleport-to-5",
+          "zone": "153",
+          "requiredZone": "137",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 153",
+          "skipIf": "isAttuned(6)",
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "attune",
+          "target": 6,
+          "location": {
+            "npcId": 6,
+            "zone": 153,
+            "position": {
+              "x": -230.0603,
+              "y": 22.62909,
+              "z": 355.45886
+            }
+          },
+          "id": "attune-aetheryte-6",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isAttuned(6)",
+          "skipIf": "isAttuned(6)",
+          "stopDistance": 3.5,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1002754,
+            "zone": 153,
+            "position": {
+              "x": -219.22644,
+              "y": 20.923328,
+              "z": 338.4298
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "153",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66698)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 3,
+          "id": "teleport-to-3",
+          "zone": "148",
+          "requiredZone": "153",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 148",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1000471,
+            "zone": 148,
+            "position": {
+              "x": -60.471558,
+              "y": 0.19999999,
+              "z": 6.301941
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1000471",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66698) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "pickup-item",
+          "interactableId": 2001467,
+          "position": {
+            "x": -44.419067,
+            "y": 1.4190674,
+            "z": -36.850586
+          },
+          "id": "pickup-item-2000085",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000085)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "purchase-item",
+          "target": {
+            "npcId": 1000220,
+            "zone": 148,
+            "position": {
+              "x": 16.189758,
+              "y": -8.010209,
+              "z": -15.640564
+            }
+          },
+          "itemId": 4868,
+          "quantity": 99,
+          "currency": "gil",
+          "gcCategory": null,
+          "gcRankTier": null,
+          "vendorCategory": 4,
+          "id": "buy-item-4868",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(4868,99)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1000471,
+            "zone": 148,
+            "position": {
+              "x": -60.471558,
+              "y": 0.19999999,
+              "z": 6.301941
+            }
+          },
+          "items": [
+            2000085
+          ],
+          "id": "hand-over-item-2000085",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "not(playerHasItem(2000085))",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 4,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "use-item",
+          "kind": "inventoryItem",
+          "itemId": 4868,
+          "id": "use-item-4868",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "not playerHasItem(4868, 99)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "combat",
+          "killEnemyDataIds": [
+            178
+          ],
+          "spawn": "overworldEnemies",
+          "location": {
+            "npcId": 0,
+            "zone": 148,
+            "position": {
+              "x": -228.49223,
+              "y": 59.573975,
+              "z": -58.91775
+            }
+          },
+          "id": "defeat-178",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66698) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1000471,
+            "zone": 148,
+            "position": {
+              "x": -60.471558,
+              "y": 0.19999999,
+              "z": 6.301941
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "148",
+          "requiredZone": "148",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66698)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
