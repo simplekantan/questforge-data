@@ -68,7 +68,7 @@
       "steps": [
         {
           "type": "fragment",
-          "ref": "travel/thanalan/tp-lil-mihgo",
+          "ref": "travel/thanalan/tp-lil-mhigo",
           "params": null,
           "id": "fragment-travel-thanalan-tp-lil-mhigo",
           "zone": null,
