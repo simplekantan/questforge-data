@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66284,
+  "name": "Highbridge Times",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 24,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006196,
+    "zone": 145,
+    "position": {
+      "x": -63.98114,
+      "y": -20.296291,
+      "z": -5.142395
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006196,
+            "zone": 145,
+            "position": {
+              "x": -63.98114,
+              "y": -20.296291,
+              "z": -5.142395
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66284)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006206,
+            "zone": 145,
+            "position": {
+              "x": -90.95911,
+              "y": -29.465149,
+              "z": -58.854065
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66284, 0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006204,
+            "zone": 145,
+            "position": {
+              "x": -29.34314,
+              "y": -10.500086,
+              "z": -7.5532227
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-2",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66284, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006205,
+            "zone": 145,
+            "position": {
+              "x": 14.480774,
+              "y": -5.9663696,
+              "z": 7.4310913
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006205",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66284) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006196,
+            "zone": 145,
+            "position": {
+              "x": -63.98114,
+              "y": -20.296291,
+              "z": -5.142395
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66284)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

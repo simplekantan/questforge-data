@@ -1,0 +1,158 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66283,
+  "name": "Shadow of Darkness",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 24,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006688,
+    "zone": 212,
+    "position": {
+      "x": 39.29187,
+      "y": 1.2148079,
+      "z": 0.8086548
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006688,
+            "zone": 212,
+            "position": {
+              "x": 39.29187,
+              "y": 1.2148079,
+              "z": 0.8086548
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "212",
+          "requiredZone": "212",
+          "resumePointFragmentId": "travel/return-to-the-solar",
+          "expect": "isQuestAccepted(66283)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 9,
+          "id": "teleport-to-9",
+          "zone": "130",
+          "requiredZone": "212",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 130",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1004576,
+            "zone": 130,
+            "position": {
+              "x": -141.64954,
+              "y": 4.1,
+              "z": -114.67157
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1004576",
+          "zone": "130",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66283) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "teleport",
+          "aetheryteId": 18,
+          "id": "teleport-to-18",
+          "zone": "145",
+          "requiredZone": "130",
+          "resumePointFragmentId": null,
+          "expect": "playerZone() == 145",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006196,
+            "zone": 145,
+            "position": {
+              "x": -63.98114,
+              "y": -20.296291,
+              "z": -5.142395
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "145",
+          "requiredZone": "145",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66283)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

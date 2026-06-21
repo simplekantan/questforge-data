@@ -1,0 +1,180 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66297,
+  "name": "Tea for Three",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 25,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006217,
+    "zone": 146,
+    "position": {
+      "x": -181.04828,
+      "y": 28.21406,
+      "z": -402.02948
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006217,
+            "zone": 146,
+            "position": {
+              "x": -181.04828,
+              "y": 28.21406,
+              "z": -402.02948
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66297)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1006702,
+            "zone": 146,
+            "position": {
+              "x": -186.14484,
+              "y": 3.6335826,
+              "z": -247.82184
+            }
+          },
+          "items": [
+            2000607
+          ],
+          "id": "hand-over-item",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66297,  0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1006704,
+            "zone": 146,
+            "position": {
+              "x": -174.12073,
+              "y": 4.3956237,
+              "z": -165.45361
+            }
+          },
+          "items": [
+            2000607
+          ],
+          "id": "hand-over-item-2",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66297, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": "2000607"
+        },
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1006703,
+            "zone": 146,
+            "position": {
+              "x": -187.27399,
+              "y": 9.149252,
+              "z": -133.22656
+            }
+          },
+          "items": [
+            2000607
+          ],
+          "id": "hand-over-item-2000607",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "not(playerHasItem(2000607))",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006217,
+            "zone": 146,
+            "position": {
+              "x": -181.04828,
+              "y": 28.21406,
+              "z": -402.02948
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66297)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

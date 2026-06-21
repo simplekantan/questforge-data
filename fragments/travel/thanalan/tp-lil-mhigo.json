@@ -1,16 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-    "fragmentId": "travel/shroud/tp-quarrymill",
+  "fragmentId": "travel/thanalan/tp-lil-mhigo",
   "parameters": [],
   "steps": [
     {
       "type": "teleport",
-      "aetheryteId": 5,
-      "id": "teleport-to-5",
-      "zone": "153",
-      "requiredZone": "148",
+      "aetheryteId": 19,
+      "id": "teleport-to-19",
+      "zone": "146",
+      "requiredZone": "130",
       "resumePointFragmentId": null,
-      "expect": "playerZone() == 153",
+      "expect": "playerZone() == 146",
       "skipIf": null,
       "stopDistance": null,
       "recover": null,

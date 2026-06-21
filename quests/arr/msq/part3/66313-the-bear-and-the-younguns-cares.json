@@ -1,0 +1,206 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66313,
+  "name": "The Bear and the Young'uns' Cares",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 27,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006215,
+    "zone": 146,
+    "position": {
+      "x": -227.34424,
+      "y": 26.16842,
+      "z": -352.98694
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66313)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006221,
+            "zone": 146,
+            "position": {
+              "x": -219.65369,
+              "y": 26.204851,
+              "z": -337.789
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-1",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66313,  0) >= 1",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006222,
+            "zone": 146,
+            "position": {
+              "x": -207.17181,
+              "y": 27.31405,
+              "z": -331.34973
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-2",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66313, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006223,
+            "zone": 146,
+            "position": {
+              "x": -85.06909,
+              "y": 26.222988,
+              "z": -348.50085
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-3",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66313, 0) >= 3",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006224,
+            "zone": 146,
+            "position": {
+              "x": -77.74481,
+              "y": 27.626602,
+              "z": -325.42914
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006224",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66313) >= 255",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66313)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}

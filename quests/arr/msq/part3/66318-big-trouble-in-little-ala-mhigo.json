@@ -1,0 +1,281 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": 66318,
+  "name": "Big Trouble in Little Ala Mhigo",
+  "expansion": "arr",
+  "category": "msq",
+  "enabled": true,
+  "supportStatus": {
+    "implementation": "partial",
+    "knownIssues": [],
+    "minigameSkippable": null
+  },
+  "lastVerifiedPatch": "unknown",
+  "requirements": {
+    "minLevel": 27,
+    "maxLevel": null,
+    "requiredJob": null,
+    "requiredStartingClass": null,
+    "prereqs": []
+  },
+  "acceptFrom": {
+    "npcId": 1006215,
+    "zone": 146,
+    "position": {
+      "x": -227.34424,
+      "y": 26.16842,
+      "z": -352.98694
+    }
+  },
+  "chain": null,
+  "rewardOverride": null,
+  "contributors": null,
+  "notes": null,
+  "sequences": [
+    {
+      "sequence": 0,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "accept",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "dialogueChoices": [],
+          "id": "accept-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestAccepted(66318)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 1,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "pickup-item",
+          "interactableId": 2001980,
+          "position": {
+            "x": -202.22784,
+            "y": 28.122314,
+            "z": -318.5016
+          },
+          "id": "pickup-item-2000974",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000974)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1007616,
+            "zone": 146,
+            "position": {
+              "x": -98.77167,
+              "y": 26.161106,
+              "z": -341.3291
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-1",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66318, 0) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "pickup-item",
+          "interactableId": 2001981,
+          "position": {
+            "x": -78.93494,
+            "y": 26.474365,
+            "z": -350.08777
+          },
+          "id": "pickup-item-2000973",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "playerHasItem(2000973)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1007617,
+            "zone": 146,
+            "position": {
+              "x": -114.7937,
+              "y": 39.483143,
+              "z": -339.71167
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-step-2",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questVariableHigh(66318, 0) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        },
+        {
+          "type": "talk",
+          "target": {
+            "npcId": 1006225,
+            "zone": 146,
+            "position": {
+              "x": -83.84839,
+              "y": 39.399178,
+              "z": -333.69952
+            }
+          },
+          "targets": null,
+          "targetOrder": null,
+          "dialogueChoices": [],
+          "id": "talk-to-npc-1006225",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66318) >= 2",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 2,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "hand-over-item",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "items": [
+            2000973,
+            2000974
+          ],
+          "id": "hand-over-item-2000973",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "not(playerHasItem(2000973)) and not(playerHasItem(2000974))",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 3,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "single-player-duty",
+          "contentFinderConditionId": 353,
+          "entryKind": "talk",
+          "entryTargetId": 1006230,
+          "entryPosition": {
+            "x": 34.89734,
+            "y": 3.3969688,
+            "z": -343.70947
+          },
+          "id": "spd-353",
+          "zone": null,
+          "requiredZone": null,
+          "resumePointFragmentId": null,
+          "expect": "questSequence(66318) >= 4",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    },
+    {
+      "sequence": 255,
+      "skipIf": null,
+      "steps": [
+        {
+          "type": "turn-in",
+          "target": {
+            "npcId": 1006215,
+            "zone": 146,
+            "position": {
+              "x": -227.34424,
+              "y": 26.16842,
+              "z": -352.98694
+            }
+          },
+          "dialogueChoices": [],
+          "id": "turn-in-quest",
+          "zone": "146",
+          "requiredZone": "146",
+          "resumePointFragmentId": null,
+          "expect": "isQuestComplete(66318)",
+          "skipIf": null,
+          "stopDistance": null,
+          "recover": null,
+          "retry": null,
+          "preconditions": null,
+          "notes": null
+        }
+      ]
+    }
+  ]
+}
